@@ -16,9 +16,15 @@ dependencies {
     compile 'com.google.android.gms:play-services-base:11.8.0'
 
     // for rfp-video-sdk
-    //compile 'jp.fout.rfp.android.sdk:rfp-video-sdk:x.x.x'
+    // using version 2.5.x
+    //compile 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer25:x.x.x'
     //compile 'com.google.android.exoplayer:exoplayer-core:r2.5.4'
     //compile 'com.google.android.exoplayer:exoplayer-hls:r2.5.4'
+
+    // if using exoplayer2.6
+    //compile 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer26:x.x.x'
+    //compile 'com.google.android.exoplayer:exoplayer-core:r2.6.1'
+    //compile 'com.google.android.exoplayer:exoplayer-hls:r2.6.1'
 
     // if using exoplayer2.4
     //compile 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer24:x.x.x'
