@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TOP on RFP-Android-SDK Docs</title>
+    <link>https://fout.github.io/RFP-Android-SDK/</link>
+    <description>Recent content in TOP on RFP-Android-SDK Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    
+	<atom:link href="https://fout.github.io/RFP-Android-SDK/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>はじめに</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_1/</guid>
+      <description>AndroidManifest.xml Media ID の取得 コード内初期化 AndroidManifest.xml AndroidManifest.xmlに次の内容を記述ください。 &amp;lt;!-- 必要なパーミッション --&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot; /&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.ACCESS_NETWORK_STATE&amp;quot; /&amp;gt; &amp;lt;application&amp;gt; &amp;lt;!-- google play se</description>
+    </item>
+    
+    <item>
+      <title>広告枠IDの取得</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_2/</guid>
+      <description>現在は、広告枠の登録設定については担当者へお問い合わせください。 管理画面から広告枠 ID を発行します。次の情報を設定し、広告枠IDが払い出されま</description>
+    </item>
+    
+    <item>
+      <title>簡易版インフィード広告</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_3/</guid>
+      <description>簡易版インフィード広告の表示 簡易版インフィード広告の表示時のイベント取得 簡易版インフィード広告の追加ロード 利用可能な簡易版インフィード広告フ</description>
+    </item>
+    
+    <item>
+      <title>カスタムインフィード広告</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_4/</guid>
+      <description>カスタムインフィード広告のロード カスタムインフィード広告の表示に用いるパラメーター カスタムインフィード広告の表示時のイベント取得 カスタムイン</description>
+    </item>
+    
+    <item>
+      <title>動画広告への対応</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_5/</guid>
+      <description>動画対応SDKで提供されるコンポーネント VideoAdActivityの登録 動画広告の判定 動画広告情報をVideoAdViewに処理させる 動</description>
+    </item>
+    
+  </channel>
+</rss>

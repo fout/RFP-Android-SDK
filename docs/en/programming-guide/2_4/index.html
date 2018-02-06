@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.34" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
+
+    <title>Customized infeed advertising :: RFP-Android-SDK Docs</title>
+    
+    
+    <link href="/RFP-Android-SDK/css/nucleus.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1517884370" rel="stylesheet">
+    
+      <link href="/RFP-Android-SDK/css/theme-green.css?1517884370" rel="stylesheet">
+    
+
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1517884370"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/RFP-Android-SDK/en/programming-guide/2_4/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://fout.github.io/RFP-Android-SDK/en">
+    RFP-Android-SDK Docs
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1517884370"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1517884370"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/RFP-Android-SDK\/en";
+    
+</script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1517884370"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/installation-guide/" title="Installation Guide" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/en/installation-guide/">
+          <b>1. </b>Installation Guide
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/programming-guide/" title="Programming Guide" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/en/programming-guide/">
+          <b>2. </b>Programming Guide
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_1/" title="Introduction" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_1/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_2/" title="Acquisition of advertising framework Id" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_2/">
+        Acquisition of advertising framework Id
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_3/" title="Simple infeed advertising" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_3/">
+        Simple infeed advertising
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_4/" title="Customized infeed advertising" class="dd-item active">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_4/">
+        Customized infeed advertising
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_5/" title="Support for video advertising" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_5/">
+        Support for video advertising
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/en/faq/">
+          <b>3. </b>FAQ
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/changelog/" title="CHANGELOG" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/en/changelog/">
+          <b>4. </b>CHANGELOG
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/fout/RFP-Android-SDK"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="ja" value="/RFP-Android-SDK/programming-guide/2_4/">日本語</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="en" value="/RFP-Android-SDK/en/programming-guide/2_4/" selected>English</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Docs are generated by using <a href="http://gohugo.io/">Hugo</a>.</p>
+<p>Theme provided by <a href="https://github.com/matcornic/hugo-theme-learn/">hugo-theme-learn</a>.</p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/RFP-Android-SDK/en/'>TOP</a> > <a href='/RFP-Android-SDK/en/programming-guide/'>Programming Guide</a> > Customized infeed advertising
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#loading-customized-infeed-advertising">Loading customized infeed advertising</a></li>
+<li><a href="#parameters-used-for-displaying-customized-infeed-advertising">Parameters used for displaying customized infeed advertising</a></li>
+<li><a href="#acquire-event-when-displaying-the-customized-infeed-advertising">Acquire event when displaying the customized infeed advertising</a></li>
+<li><a href="#displaying-customized-infeed-advertising">Displaying customized infeed advertising</a></li>
+<li><a href="#when-using-something-other-than-listview">When using something other than ListView</a></li>
+<li><a href="#acquiring-the-advertising-id">Acquiring the advertising ID</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Customized infeed advertising</h1>
+          
+
+        
+
+
+
+
+<ul>
+<li><a href="#infeed/custom/load">Loading customized infeed advertising</a></li>
+<li><a href="#infeed/custom/display_param">Parameters used to display customized infeed advertising</a></li>
+<li><a href="#infeed/custom/event">Acquisition of events when displaying customized infeed advertising</a></li>
+<li><a href="#infeed/custom/display">Displaying customized infeed advertising</a></li>
+<li><a href="#infeed/custom/recyclerview">When using other than ListView</a></li>
+<li><a href="#infeed/custom/adid">Acquisition of advertising ID</a></li>
+</ul>
+
+<p>When you wish to display in a more flexible way than with simple infeed advertising, it is possible to use a customized infeed advertising function.</p>
+
+<p>Be sure to include a description in implementation so that the user recognizes and understands that the implemented advertising location is for an advertisement.</p>
+
+<ul>
+<li>By using the parameter <code>displayedAdvertiser</code>, it is possible to display suitable text in each advertisement.</li>
+</ul>
+
+<p>The following items presume use of ListView.
+When using something other than ListView (for example, RecyclerView), see <a href="#infeed/custom/recyclerview">when using other than ListView</a> .</p>
+
+<p><a name="infeed/custom/load"></a></p>
+
+<h3 id="loading-customized-infeed-advertising">Loading customized infeed advertising</h3>
+
+<p>Implement the following using RFPInstreamAdPlacer to display infeed advertising.</p>
+
+<pre><code class="language-java">// (1) Import the necessary package
+import jp.fout.rfp.android.sdk.RFP;
+import jp.fout.rfp.android.sdk.instream.RFPInstreamAdPlacer;
+import jp.fout.rfp.android.sdk.instream.InstreamAdViewBinderImpl;
+import jp.fout.rfp.android.sdk.model.RFPInstreamInfoModel;
+
+public class MyActivity extends Activity {
+
+    // (2) Definition of RFPInstreamAdPlacer
+    private RFPInstreamAdPlacer adPlacer;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // (3) Initialization of RFP SDK
+        RFP.init(getActivity().getApplicationContext(), &quot;YOUR_MEDIA_ID&quot;);
+
+        // (4) Generation of RFPInstreamAdPlacer
+        adPlacer = RFP.createInstreamAdPlacer(getActivity().getApplicationContext(), &quot;YOUR_ADSPOT_ID&quot;);
+
+        // (5)  Allocate advertising case information to any View (see parameter items used for customized infeed advertising, as described below)
+        InstreamAdViewBinderImpl adViewBinder = new InstreamAdViewBinderImpl(getActivity().getApplicationContext()) {
+            @Override
+            public View createView(ViewGroup parent, int layoutId) {
+                View view = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.custom_instream_ad_view, parent, false);
+                AdViewHolder holder = new AdViewHolder(view);
+                view.setTag(holder);
+                return view;
+            }
+
+            @Override
+            public void bindAdData(View v, RFPInstreamInfoModel adData) {
+                AdViewHolder holder = (AdViewHolder) v.getTag();
+                holder.setData(adData);
+
+                loadAdImage(adData, holder.adImage, null);
+                loadAdIconImage(adData, holder.iconImage, null);
+            }
+        };
+        adPlacer.registerAdViewBinder(adViewBinder);
+   }
+
+   // (6) Starting loading of infeed advertising
+   adPlacer.loadAd();
+
+   ...
+
+   // (7) Use [ViewHolder pattern](http://developer.android.com/training/improving-layouts/smooth-scrolling.html) to improve performance
+   static class AdViewHolder {
+        TextView advertiserName;
+        TextView adText;
+        ImageView adImage;
+        ImageView iconImage;
+        TextView adSponsoredLabel;
+
+        public AdViewHolder(View convertView) {
+            advertiserName = (TextView) convertView.findViewById(R.id.custom_instream_advertiser_name);
+            adText = (TextView) convertView.findViewById(R.id.custom_instream_ad_text);
+            adImage = (ImageView) convertView.findViewById(R.id.custom_instream_ad_image);
+            iconImage = (ImageView) convertView.findViewById(R.id.custom_instream_advertiser_icon);
+            adSponsoredLabel = (TextView) convertView.findViewById(R.id.custom_instream_sponsor_name);
+        }
+
+        void setData(RFPInstreamInfoModel adData) {
+            advertiserName.setText(adData.title());
+            adText.setText(adData.content());
+
+            String displayedAdvertiser = adData.displayedAdvertiser();
+            if (null != displayedAdvertiser &amp;&amp; 0 &lt; displayedAdvertiser.length()) {
+                adSponsoredLabel.setText(displayedAdvertiser);
+            }
+        }
+    }
+}
+</code></pre>
+
+<p><a name="infeed/custom/display_param"></a></p>
+
+<h3 id="parameters-used-for-displaying-customized-infeed-advertising">Parameters used for displaying customized infeed advertising</h3>
+
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>title</td>
+<td>Title text (20 full-sized characters or less)</td>
+<td><code>TestAd</code></td>
+</tr>
+
+<tr>
+<td>content</td>
+<td>description/introductory text (40-70 full-sized characters or less)</td>
+<td><code>This is text advertising</code></td>
+</tr>
+
+<tr>
+<td>displayedAdvertiser</td>
+<td>displayed advertiser name</td>
+<td><code>Drinks company A</code></td>
+</tr>
+
+<tr>
+<td>iconImage</td>
+<td>Icon type rectangular image (114x114 pixel fixed)</td>
+<td>Call the following methods</td>
+</tr>
+
+<tr>
+<td>mainImage</td>
+<td>Banner-type rectangular images, etc. (variable size for each advertising framework Id)</td>
+<td>Call the following methods</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="infeed/custom/event"></a></p>
+
+<h3 id="acquire-event-when-displaying-the-customized-infeed-advertising">Acquire event when displaying the customized infeed advertising</h3>
+
+<p>When displaying customized infeed advertising, you may wish to receive this event.</p>
+
+<p>In this case, set RFPInstreamAdPlacerListener in RFPInstreamAdPlacer.</p>
+
+<pre><code class="language-java">RFPInstreamAdPlacer adPlacer;
+RFPInstreamAdPlacerListener listener;
+
+// (1) Set listener in RFPInstreamAdAdapter
+adPlacer.setAdListener(listener);
+
+listener = new RFPInstreamAdPlacerListener() {
+
+    // (2) When advertising loading is complete
+    // Acquire the advertising case information to pass placeAd(RFPInstreamInfoModel advsinstreaminfomodel, View view, ViewGroup viewgroup) of the RFPInstreamAdPlacer to be described later
+    @Override
+    public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt;items) {
+    }
+    // (3) When main image loading in advertising View is complete
+    @Override
+    public void onAdMainImageLoaded(String imageUrl) {
+    }
+    // (4) When icon image loading in advertising View is complete
+    @Override
+    public void onAdIconImageLoaded(String imageUrl) {
+    }
+    // (5) When advertising loading fails
+    @Override
+    public void onAdsLoadedFail(String errorString) {
+    }
+    // (6) When advertising View image loading fails
+    @Override
+    public void onAdImageLoadedFail(String imageUrl, String errorString) {
+    }
+    // (7) When clicking advertising View
+    @Override
+    public void onAdClicked(String redirectURL) {
+    }
+};
+</code></pre>
+
+<p><a name="infeed/custom/display"></a></p>
+
+<h3 id="displaying-customized-infeed-advertising">Displaying customized infeed advertising</h3>
+
+<p>Implements the following using RFPInstreamAdPlacer to display infeed advertising.</p>
+
+<p>Here, we show an example of using this within BaseAdapter, but it is not limited to such cases.</p>
+
+<pre><code class="language-java">private class CustomInstreamSampleAdapter extends BaseAdapter {
+        ...
+        @Override
+        public int getCount() {
+            return dataSourceList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return dataSourceList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public int getViewTypeCount() {
+            // (1) Supports the advertising case display format
+            return 2;
+        }
+
+        @Override
+        public int getItemViewType(int position) {
+            // Same as (1)
+            return isAd(position) ? 0 : 1;
+        }
+
+        private boolean isAd(int position) {
+            // Same as (1)
+            return (getItem(position) instanceof RFPInstreamInfoModel) ? true : false;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (isAd(position)) {
+                // (2) Retrieves and displays customized View for expressing the advertising cases
+                convertView = adPlacer.placeAd((RFPInstreamInfoModel) getItem(position), convertView, parent);
+            } else {
+                // Displays the content View 
+                if (null == convertView || !TAG_DEFAULT.equals(convertView.getTag())) {
+                    LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    convertView = inflater.inflate(android.R.layout.simple_expandable_list_item_1, parent, false);
+                    convertView.setTag(TAG_DEFAULT);
+                }
+                TextView textView = (TextView) convertView.findViewById(android.R.id.text1);
+                textView.setText((String) getItem(position));
+            }
+            return convertView;
+        }
+}
+...
+// (3) Acquires infeed advertising information
+@Override
+public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt; items) {
+   for (RFPInstreamInfoModel adData : items) {
+       adapter.dataSourceList.add(3, adData);
+    }
+    adapter.notifyDataSetChanged();
+}
+</code></pre>
+
+<p><a name="infeed/custom/recyclerview"></a></p>
+
+<h3 id="when-using-something-other-than-listview">When using something other than ListView</h3>
+
+<p>There are important points to note when implementing in relation to the explicit transmission of the impression log and click log.</p>
+
+<ul>
+<li>Since it is not possible to use <code>InstreamAdViewBinderImpl</code> when using views other than ListView, such as RecylerView, it is necessary to call <code>measureImp</code> and <code>sendClickEvent</code> respectively, when displaying advertisements and clicking advertisements.
+-When using ListView, it is possible to not use <code>InstreamAdViewBinderImpl</code>, and use an explicit transmission API instead</li>
+<li>In this case, take care not to concurrently use <code>InstreamAdViewBinderImpl</code> with an explicit transmission API (this may cause unintended results such as the results being calculated in duplicate)</li>
+</ul>
+
+<p><a name="infeed/custom/adid"></a></p>
+
+<h3 id="acquiring-the-advertising-id">Acquiring the advertising ID</h3>
+
+<p>It is possible to acquire the advertising ID with RFPInstreamInfoModel#ad_id().</p>
+
+<pre><code class="language-java"> static class AdViewHolder {
+     // ... ...
+     void setData(RFPInstreamInfoModel adData) {
+         // ... ...
+         String ad_id = adData.ad_id();
+         // ... ...
+     }
+ }
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/RFP-Android-SDK/en/programming-guide/2_3/" title="Simple infeed advertising"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/RFP-Android-SDK/en/programming-guide/2_5/" title="Support for video advertising" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1517884370"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1517884370"></script>
+
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1517884370" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1517884370"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

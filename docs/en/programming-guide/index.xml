@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming Guide on RFP-Android-SDK Docs</title>
+    <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/</link>
+    <description>Recent content in Programming Guide on RFP-Android-SDK Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    
+	<atom:link href="https://fout.github.io/RFP-Android-SDK/en/programming-guide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_1/</guid>
+      <description>AndroidManifest.xml Acquisition of Media ID Initialization within code  
+AndroidManifest.xml Describe the following content in AndroidManifest.xml.
+&amp;lt;!-- Required permissions --&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot; /&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.ACCESS_NETWORK_STATE&amp;quot; /&amp;gt; &amp;lt;application&amp;gt; &amp;lt;!-- Description for using the google play service library --&amp;gt; &amp;lt;meta-data android:name=&amp;quot;com.google.android.gms.version&amp;quot; android:value=&amp;quot;@integer/google_play_services_version&amp;quot; /&amp;gt; &amp;lt;/application&amp;gt;  
+Acquisition of Media ID Register from each management screen and issue Media ID.
+(At the current stage, you should contact your representative)
+Since this Media ID is used for the app identifier, make sure you do not forget it.</description>
+    </item>
+    
+    <item>
+      <title>Acquisition of advertising framework Id</title>
+      <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_2/</guid>
+      <description>In addition to Media ID acquisition, register the advertising framework in advance. Set the following information to output the advertising framework Id.
+ Advertising framework name Advertising format(necessary only for simple In-Feed advertisements described later) Number of advertising cases Advertising placement sequence HTML (only when using WebView format)  Because this is linked to real cases, the number of cases may be less than the ones described below. Contact the representative at this time.</description>
+    </item>
+    
+    <item>
+      <title>Simple infeed advertising</title>
+      <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_3/</guid>
+      <description>Display of simple infeed advertising Acquisition of events when displaying simple infeed advertising Simple infeed advertising additional load Usable simple infeed advertising format  Simple implementation is possible when using the view components, including ListView and ArrayAdapter.
+
+Displaying simple infeed advertising Implement the following using RFPInstreamAdAdapter to display infeed advertising.
+// (1) Importing the necessary packages import jp.fout.rfp.android.sdk.RFP; import jp.fout.rfp.android.sdk.instream.ADVSInstreamAdAdapter; public class MyActivity extends Activity { // (2) RFPInstreamAdAdapter definition private RFPInstreamAdAdapter&amp;lt;ArrayAdapter&amp;gt; rfpAdapter; @Override public void onCreate(Bundle savedInstanceState) { .</description>
+    </item>
+    
+    <item>
+      <title>Customized infeed advertising</title>
+      <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_4/</guid>
+      <description>Loading customized infeed advertising Parameters used to display customized infeed advertising Acquisition of events when displaying customized infeed advertising Displaying customized infeed advertising When using other than ListView Acquisition of advertising ID  When you wish to display in a more flexible way than with simple infeed advertising, it is possible to use a customized infeed advertising function.
+Be sure to include a description in implementation so that the user recognizes and understands that the implemented advertising location is for an advertisement.</description>
+    </item>
+    
+    <item>
+      <title>Support for video advertising</title>
+      <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_5/</guid>
+      <description>Components provided by an advertising-compatible SDK Registration of VideoAdActivity Video advertising judgments Process video advertising information with VideoAdView Changing the text for the buttons located in video advertising Playing the video Resuming from full-screen mode Playback control when transferring mode Support for video advertising loading errors Cache settings  Components provided in the video support SDK VideoAdView: This is the Custom View for video playback and sending tracking events.</description>
+    </item>
+    
+  </channel>
+</rss>

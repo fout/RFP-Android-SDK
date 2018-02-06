@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.34" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
+
+    <title>動画広告への対応 :: RFP-Android-SDK Docs</title>
+    
+    
+    <link href="/RFP-Android-SDK/css/nucleus.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1517884370" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1517884370" rel="stylesheet">
+    
+      <link href="/RFP-Android-SDK/css/theme-green.css?1517884370" rel="stylesheet">
+    
+
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1517884370"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/RFP-Android-SDK/programming-guide/2_5/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://fout.github.io/RFP-Android-SDK/ja">
+    RFP-Android-SDK Docs
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="検索">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1517884370"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1517884370"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/RFP-Android-SDK\/";
+    
+</script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1517884370"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/installation-guide/" title="インストールガイド" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/installation-guide/">
+          <b>1. </b>インストールガイド
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/programming-guide/" title="プログラミングガイド" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/programming-guide/">
+          <b>2. </b>プログラミングガイド
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_1/" title="はじめに" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_1/">
+        はじめに
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_2/" title="広告枠IDの取得" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_2/">
+        広告枠IDの取得
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_3/" title="簡易版インフィード広告" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_3/">
+        簡易版インフィード広告
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_4/" title="カスタムインフィード広告" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_4/">
+        カスタムインフィード広告
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_5/" title="動画広告への対応" class="dd-item active">
+        <a href="/RFP-Android-SDK/programming-guide/2_5/">
+        動画広告への対応
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/faq/">
+          <b>3. </b>FAQ
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/changelog/" title="CHANGELOG" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/changelog/">
+          <b>4. </b>CHANGELOG
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/fout/RFP-Android-SDK"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="ja" value="/RFP-Android-SDK/programming-guide/2_5/" selected>日本語</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="en" value="/RFP-Android-SDK/en/programming-guide/2_5/">English</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Docs are generated by using <a href="http://gohugo.io/">Hugo</a>.</p>
+<p>Theme provided by <a href="https://github.com/matcornic/hugo-theme-learn/">hugo-theme-learn</a>.</p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/RFP-Android-SDK/'>TOP</a> > <a href='/RFP-Android-SDK/programming-guide/'>プログラミングガイド</a> > 動画広告への対応
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#動画対応sdkで提供されるコンポーネント">動画対応SDKで提供されるコンポーネント</a></li>
+<li><a href="#videoadactivityの登録">VideoAdActivityの登録</a></li>
+<li><a href="#動画広告の判定">動画広告の判定</a></li>
+<li><a href="#動画広告情報をvideoadviewに処理させる">動画広告情報をVideoAdViewに処理させる</a></li>
+<li><a href="#動画広告に配置するボタンのテキストの変更">動画広告に配置するボタンのテキストの変更</a></li>
+<li><a href="#動画の再生">動画の再生</a></li>
+<li><a href="#全画面モードへの移行">全画面モードへの移行</a></li>
+<li><a href="#モードへの移行時の再生制御">モードへの移行時の再生制御</a></li>
+<li><a href="#動画広告読み込みエラーへの対応">動画広告読み込みエラーへの対応</a>
+<ul>
+<li><a href="#フィード内の場合">フィード内の場合</a></li>
+<li><a href="#フルスクリーンの場合">フルスクリーンの場合</a></li>
+</ul></li>
+<li><a href="#キャッシュの設定">キャッシュの設定</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>動画広告への対応</h1>
+          
+
+        
+
+
+
+
+<ul>
+<li><a href="#infeed/video/feature">動画対応SDKで提供されるコンポーネント</a></li>
+<li><a href="#infeed/video/activity">VideoAdActivityの登録</a></li>
+<li><a href="#infeed/video/topic-3">動画広告の判定</a></li>
+<li><a href="#infeed/video/topic-4">動画広告情報をVideoAdViewに処理させる</a></li>
+<li><a href="#infeed/video/topic-5">動画広告に配置するボタンのテキストの変更</a></li>
+<li><a href="#infeed/video/play">動画の再生</a></li>
+<li><a href="#infeed/video/resume-fullscreen">全画面モードからの復帰</a></li>
+<li><a href="#infeed/video/fullscreen-control">モードへの移行時の再生制御</a></li>
+<li><a href="#infeed/video/error-handling">動画広告読み込みエラーへの対応</a></li>
+<li><a href="#infeed/video/using-cache">キャッシュの設定</a></li>
+</ul>
+
+<p><a name="infeed/video/feature"></a></p>
+
+<h3 id="動画対応sdkで提供されるコンポーネント">動画対応SDKで提供されるコンポーネント</h3>
+
+<p><code>VideoAdView</code>:
+動画再生およびトラッキングイベントの送信を行うCustom Viewです。
+レイアウトファイルに直接配置することができます。</p>
+
+<p><code>VideoAdActivity</code>:
+全画面時に表示されるActivityです。
+<code>VideoAdView</code>と同様、動画再生およびトラッキングイベントの送信を行いますが、動画再生の制御機能が増えています。</p>
+
+<p><a name="infeed/video/activity"></a></p>
+
+<h3 id="videoadactivityの登録">VideoAdActivityの登録</h3>
+
+<p>動画SDKでは全画面表示に対応するためSDKの<code>VideoAdActivity</code>を使用します。これを<code>AndroidManifest.xml</code>に登録しておきます。</p>
+
+<pre><code class="language-xml">&lt;activity android:name=&quot;jp.fout.rfp.android.sdk.video.VideoAdActivity&quot; /&gt;
+</code></pre>
+
+<p><a name="infeed/video/topic-3"></a></p>
+
+<h3 id="動画広告の判定">動画広告の判定</h3>
+
+<p>動画広告の場合、<code>RFPInstreamInfoModel#isVideo()</code>が<code>true</code>を返します。これを利用して動画広告か否かを判定することができます。</p>
+
+<pre><code class="language-java">private boolean isAd(int position) {
+    return getItem(position) instanceof RFPInstreamInfoModel;
+}
+
+private boolean isVideoAd(int position) {
+    if (!isAd(position)) {
+        return false;
+    }
+    RFPInstreamInfoModel item = (RFPInstreamInfoModel) getItem(position);
+    return item.isVideo();
+}
+</code></pre>
+
+<p><a name="infeed/video/topic-4"></a></p>
+
+<h3 id="動画広告情報をvideoadviewに処理させる">動画広告情報をVideoAdViewに処理させる</h3>
+
+<p>動画広告の詳細情報は<code>RFPInstreamInfoModel</code>に格納されており、これを元に動画広告を組み立てるため<code>VideoAdView</code>に処理させる必要があります。
+具体的な実装としては<code>VideoAdView#processAd()</code>に<code>RFPInstreamInfoModel</code>のインスタンスに渡します。</p>
+
+<pre><code class="language-java">static class AdViewHolder {
+    TextView advertiserName;
+    TextView adText;
+    ImageView adImage;
+    ImageView iconImage;
+    TextView adSponsoredLabel;
+    VideoAdView adVideo;
+
+    AdViewHolder(View convertView) {
+        advertiserName = (TextView) convertView.findViewById(R.id.custom_instream_advertiser_name);
+        adText = (TextView) convertView.findViewById(R.id.custom_instream_ad_text);
+        adImage = (ImageView) convertView.findViewById(R.id.custom_instream_ad_image);
+        iconImage = (ImageView) convertView.findViewById(R.id.custom_instream_advertiser_icon);
+        adSponsoredLabel = (TextView) convertView.findViewById(R.id.custom_instream_sponsor_name);
+        adVideo = (VideoAdView) convertView.findViewById(R.id.custom_instream_video_view);
+    }
+
+    void setData(RFPInstreamInfoModel adData) {
+        advertiserName.setText(adData.title());
+        adText.setText(adData.content());
+
+        String displayedAdvertiser = adData.displayedAdvertiser();
+        if (null != displayedAdvertiser &amp;&amp; 0 &lt; displayedAdvertiser.length()) {
+            adSponsoredLabel.setText(displayedAdvertiser);
+        }
+
+        adVideo.processAd(adData);
+    }
+}
+</code></pre>
+
+<p><a name="infeed/video/topic-5"></a></p>
+
+<h3 id="動画広告に配置するボタンのテキストの変更">動画広告に配置するボタンのテキストの変更</h3>
+
+<p>動画広告に配置する配置するボタンのテキストは広告の管理画面から設定することができます。
+この設定値は<code>RFPInstreamInfoModel#cta_text()</code>で取得することができます。</p>
+
+<pre><code class="language-java">static class AdViewHolder {
+    // ... ...
+    Button adButton;
+
+    AdViewHolder(View convertView) {
+        // ... ...
+        adButton = (Button) convertView.findViewById(R.id.custom_instream_action_button);
+    }
+
+    void setData(RFPInstreamInfoModel adData) {
+        // ... ...
+        String adButtonText = adData.cta_text();
+        if (adButtonText != null &amp;&amp; adButtonText.length() &gt; 0) {
+            adButton.setText(adButtonText);
+        }
+
+        adVideo.processAd(adData);
+    }
+}
+</code></pre>
+
+<p><a name="infeed/video/play"></a></p>
+
+<h3 id="動画の再生">動画の再生</h3>
+
+<p><code>VideoAdView#processAd()</code>を呼び出し、動画が再生可能となった時点で自動的に再生が開始されます。</p>
+
+<p><code>VideoAdView#setAutoStart(false)</code>とすることで自動再生を抑制することができます。この場合、<code>VideoAdView#play()</code>をアプリから呼び出し再生を開始する必要があります。また、<code>VideoAdView#pause()</code>を呼び出すことにより任意の地点で停止することができます。</p>
+
+<p><a name="infeed/video/resume-fullscreen"></a></p>
+
+<h3 id="全画面モードへの移行">全画面モードへの移行</h3>
+
+<p>動画領域をタップすることで全画面表示となります。</p>
+
+<p>この挙動はデフォルトの動作ですが、全画面モードを終了した際に動画の再生位置を同期させたい場合は追加の実装が必要となります。</p>
+
+<p>全画面モードはActivityであり、再生位置およびトラッキングイベント送信状況の引き継ぎのため、<code>Activity#startActivityForResult()</code>と<code>Activity#onActivityResult()</code>で結果の受け渡しを行っています。</p>
+
+<p><code>VideoAdView</code>は全画面モード移行時に<code>OnFullscreenRequestListener#onRequestFullscreen()</code>を呼び出しているのでこれを実装します。引数として対象となる<code>VideoAdView</code>と引き継ぎ情報の入ったインテントが渡されるのでこれをもとに<code>Activity#startActivityForResult()</code>を呼びます。Activityへのリクエストコードには<code>RFP.getVideoAdFullscreenRequestCode()</code>を使用してください。</p>
+
+<p><code>VideoAdView#restore(Intent)</code>を使用することで再生位置およびトラッキングイベント送信状況を引き継ぐことができます。</p>
+
+<p>Activityが<code>VideoAdView#restore(Intent)</code>の対象となる<code>VideoAdView</code>を知っている必要がありますが、<code>VideoAdView</code>のフルスクリーン画面呼び出し時のコールバックである<code>VideoAdView.OnFullscreenRequestListener</code>を実装することでこれをActivityに通知することができます。</p>
+
+<p>下記の例では、<a href="https://github.com/greenrobot/EventBus">greenrobot/EventBus</a>を用いてActivityに対象となる<code>VideoAdView</code>を通知し、保存しています。</p>
+
+<pre><code class="language-java">class VideoAdViewHolder extends RecyclerView.ViewHolder
+        implements VideoAdView.OnFullscreenRequestListener {
+    RFPInstreamAdPlacer adPlacer;
+    VideoAdView adVideo;
+
+    VideoAdViewHolder(View itemView, RFPInstreamAdPlacer placer) {
+        super(itemView);
+        adPlacer = placer;
+
+        // ... ...
+
+        adVideo = (VideoAdView) itemView.findViewById(R.id.custom_instream_ad_image);
+        adVideo.setOnFullscreenRequestListener(this);
+    }
+
+    @Override
+    public void onRequestFullscreen(VideoAdView view, Intent intent) {
+        EventBus.getDefault().post(new RequestFullscreenEvent(view, intent));
+    }
+}
+</code></pre>
+
+<pre><code class="language-java">VideoAdView mSourceVideoAdView = null;
+
+@Subscribe(threadMode = ThreadMode.MAIN)
+public void onRequestFullscreen(RequestFullscreenEvent event) {
+    mSourceVideoAdView = event.view;
+    startActivityForResult(event.intent, RFP.getVideoAdFullscreenRequestCode());
+}
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == RFP.getVideoAdFullscreenRequestCode()
+            &amp;&amp; resultCode == Activity.RESULT_OK
+            &amp;&amp; mSourceVideoAdView != null) {
+        mSourceVideoAdView.restore(data);
+    }
+}
+</code></pre>
+
+<p><code>RFP#getVideoAdFullscreenRequestCode()</code>のデフォルト値は<code>18416</code>で、<code>RFP#setVideoAdFullscreenRequestCode(int)</code>を使用して任意の値に変更できます。</p>
+
+<pre><code class="language-java">RFP.setVideoAdFullscreenRequestCode(1000);
+</code></pre>
+
+<p><code>VideoAdView#setAutoStart()</code>を用いて自動再生を抑制している場合は、復帰時に<code>VideoAdView#play()</code>を呼び出す必要があります。</p>
+
+<pre><code class="language-java">@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == RFP.getVideoAdFullscreenRequestCode()
+            &amp;&amp; resultCode == Activity.RESULT_OK
+            &amp;&amp; mSourceVideoAdView != null) {
+        mSourceVideoAdView.restore(data);
+        mSourceVideoAdView.play();
+    }
+}
+</code></pre>
+
+<p><a name="infeed/video/fullscreen-control"></a></p>
+
+<h3 id="モードへの移行時の再生制御">モードへの移行時の再生制御</h3>
+
+<p>全画面モードへの移行時、アクションボタンによるランディングページの移動時は正しくトラッキングイベントを取得するため停止しておく必要があります。</p>
+
+<p>全画面モード移行時と全画面モード内のアクションボタンについてはSDKで正しくハンドリングされますが、アプリ側の制御となるフィード内のアクションボタンについては動画の停止処理を記述する必要があります。<code>VideoAdView#pause()</code>を<code>Activity#onStop()</code>、<code>Activity#onPause()</code>、アクションボタンの<code>onClick</code>時などいずれかに記述してください。</p>
+
+<pre><code class="language-java">VideoAdView adVideo = (VideoAdView) itemView.findViewById(R.id.custom_instream_ad_image);
+Button adButton = (Button) itemView.findViewById(R.id.custom_instream_ad_action_button);
+adButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        adVideo.pause();
+        adPlacer.sendClickEvent(adData);
+    }
+});
+</code></pre>
+
+<p><a name="infeed/video/error-handling"></a></p>
+
+<h3 id="動画広告読み込みエラーへの対応">動画広告読み込みエラーへの対応</h3>
+
+<p>動画広告読み込み時にエラーが発生した場合、エラー処理を記述して制御することができます。</p>
+
+<h4 id="フィード内の場合">フィード内の場合</h4>
+
+<p>フィード内では<code>VideoAdView#OnErrorListener</code>を実装し、<code>VideoAdView#setOnErrorListener()</code>にてリスナーを設定してください。</p>
+
+<pre><code class="language-java">static class AdViewHolder implements VideoAdView.OnErrorListener {
+    VideoAdView adVideo;
+
+    VideoAdViewHolder(View itemView, RFPInstreamAdPlacer placer) {
+        super(itemView);
+
+        // ... ...
+
+        adVideo = (VideoAdView) itemView.findViewById(R.id.custom_instream_ad_image);
+        adVideo.setOnErrorListener(this);
+    }
+    @Override
+    public void onError(VideoAdView view, String message, @Nullable Throwable t) {
+        // view: エラーの発生したVideoAdView
+        // message: エラー内容
+        // t: 例外が発生した場合に該当する例外
+        Log.d(TAG, message, t);
+    }
+}
+</code></pre>
+
+<h4 id="フルスクリーンの場合">フルスクリーンの場合</h4>
+
+<p>フルスクリーン時にエラーが発生した場合、アクティビティは終了し、<code>onActivityResult()</code>の<code>resultCode</code>に<code>RESULT_CANCELED</code>が入ります。これを判定することによりエラー処理を記述することができます。この場合、<code>Intent</code>にエラー内容が入ります。</p>
+
+<pre><code class="language-java">@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == RFP.getVideoAdFullscreenRequestCode()) {
+        if (resultCode == Activity.RESULT_OK) {
+            // 正常時の処理
+        } else if (resultCode == Activity.RESULT_CANCELED) {
+            // エラー時の処理
+            String message = data.getStringExtra(&quot;error_message&quot;);
+            Throwable t = (Throwable) data.getSerializableExtra(&quot;error&quot;);
+            Log.d(TAG, message, t);
+        }
+    }
+}
+</code></pre>
+
+<p><a name="infeed/video/using-cache"></a></p>
+
+<h3 id="キャッシュの設定">キャッシュの設定</h3>
+
+<p>RFPは動画広告を内部ストレージのキャッシュ領域にある程度保持します。</p>
+
+<p>キャッシュ容量はRFPが推奨する設定値を使用します。この値はアプリ側から変更することが可能です。</p>
+
+<pre><code class="language-java">int size = RFP.getVideoCacheSize(); // 現在の設定値を返す
+RFP.setVideoCacheSize(50); // 50MBをキャッシュ領域として使用する
+RFP.setVideoCacheSize(0);  // キャッシュを無効にする 
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/RFP-Android-SDK/programming-guide/2_4/" title="カスタムインフィード広告"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/RFP-Android-SDK/faq/" title="FAQ" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1517884370"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1517884370"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1517884370"></script>
+
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1517884370" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1517884370"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
