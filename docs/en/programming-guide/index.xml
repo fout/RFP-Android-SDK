@@ -65,5 +65,17 @@ Be sure to include a description in implementation so that the user recognizes a
       <description>Components provided by an advertising-compatible SDK Registration of VideoAdActivity Video advertising judgments Process video advertising information with VideoAdView Changing the text for the buttons located in video advertising Playing the video Resuming from full-screen mode Playback control when transferring mode Support for video advertising loading errors Cache settings  Components provided in the video support SDK VideoAdView: This is the Custom View for video playback and sending tracking events.</description>
     </item>
     
+    <item>
+      <title>Set HTTP request timeout interval</title>
+      <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_6/</guid>
+      <description>Set HTTP request timeout interval  
+Set HTTP request timeout interval (Can be used on v3.3.0 or later)
+Your app can use the setHttpRequestTimeoutInterval to set HTTP request&amp;rsquo;s timeout interval in RFP.
+public class MyActivity extends Activity { ... // ※Be sure to set the setHttpRequestTimeoutInterval before RFP.init RFP.setHttpRequestTimeoutInterval(15); //set HTTP request interval to 15s RFP.init(this.getApplicationContext(), &amp;quot;YOUR_MEDIA_ID&amp;quot;); int interval = RFP.getHttpRequestTimeoutInterval(); // Acquire current setting value ... }  Points to note when setting the timeout interval  A very short interval could lead to failed to get ads.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -55,5 +55,14 @@
       <description>動画対応SDKで提供されるコンポーネント VideoAdActivityの登録 動画広告の判定 動画広告情報をVideoAdViewに処理させる 動</description>
     </item>
     
+    <item>
+      <title>HTTPリクエストのタイムアウト間隔設定</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_6/</guid>
+      <description>HTTPリクエストのタイムアウト間隔設定 HTTPリクエストのタイムアウト間隔の設定 (v3.3.0以上利用可能) setHttpRequestT</description>
+    </item>
+    
   </channel>
 </rss>

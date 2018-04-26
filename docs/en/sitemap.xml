@@ -115,6 +115,20 @@
   </url>
   
   <url>
+    <loc>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_6/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://fout.github.io/RFP-Android-SDK/programming-guide/2_6/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_6/"
+                />
+  </url>
+  
+  <url>
     <loc>https://fout.github.io/RFP-Android-SDK/en/faq/</loc>
     <xhtml:link
                 rel="alternate"
