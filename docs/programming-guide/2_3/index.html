@@ -13,19 +13,19 @@
     <title>簡易版インフィード広告 :: RFP-Android-SDK Docs</title>
     
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1531286945" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1534301848" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1531286945" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1534301848" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1531286945"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1534301848"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1531286945"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1531286945"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1534301848"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1534301848"></script>
 <script type="text/javascript">
     
         var baseurl = "\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1531286945"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1534301848"></script>
 
     
   </div>
@@ -524,19 +524,15 @@ listener = new RFPInstreamAdLoadListener() {
     @Override
     public void instreamAdLoaderDidFinishLoadingMainImage(String imageUrl) {
     }
-    //(5)広告Viewのアイコン画像のロード完了時
-    @Override
-    public void instreamAdLoaderDidFinishLoadingIconImage(String imageUrl) {
-    }
-    //(6)広告のロード失敗時
+    //(5)広告のロード失敗時
     @Override
     public void instreamAdLoaderDidFailToLoadAdError(String errorString) {
     }
-    //(7)広告Viewのロード失敗時
+    //(6)広告Viewのロード失敗時
     @Override
     public void instreamAdLoaderDidFailToLoadImageError(String errorString) {
     }
-    //(8)広告のクリック処理完了時
+    //(7)広告のクリック処理完了時
     @Override
     public void instreamAdLoaderDidClick(String redirectUrl) {
     }
@@ -565,7 +561,7 @@ listener = new RFPInstreamAdLoadListener() {
 
 <pre><code>    // The format looks like this
     //  -----------------------------------------------------
-    // |             |  icon + name                          |
+    // |             |  name                                 |
     // |   image     |  ad text                              |
     // |             |                                       |
     // |   90x90     |                                       |
@@ -579,7 +575,7 @@ listener = new RFPInstreamAdLoadListener() {
 
 <pre><code>    // The format looks like this
     //  -----------------------------------------------------
-    // |  -------    icon + name                             |
+    // |  -------    name                                    |
     // | | image |   PR                                      |
     // | | 50x50 |   ad text                                 |
     // | |       |                                           |
@@ -601,7 +597,7 @@ listener = new RFPInstreamAdLoadListener() {
     // |                                                     |
     // |                                                     |
     // |                                                 PR  |
-    // |  advertiser icon + name                             |
+    // |  advertiser name                                    |
     //  -----------------------------------------------------
 </code></pre>
 
@@ -611,9 +607,9 @@ listener = new RFPInstreamAdLoadListener() {
 
 <pre><code>    // The format looks like this
     //  -----------------------------------------------------
-    // |  advertiser |  advertiser name                      |
-    // |     icon    |  PR                                   |
-    // |             |  ad text                              |
+    // |  advertiser name                                    |
+    // |  PR                                                 |
+    // |  ad text                                            |
     // | --------------------------------------------------- |
     // |                                                     |
     // |                                                     |
@@ -628,7 +624,7 @@ listener = new RFPInstreamAdLoadListener() {
 
 <pre><code>    // The format looks like this
     //  -----------------------------------------------------
-    // | icon + name                                         |
+    // | name                                                |
     // |                                                  PR |
     // | --------------------------------------------------- |
     // |                                                     |
@@ -648,7 +644,7 @@ listener = new RFPInstreamAdLoadListener() {
 
 <pre><code>    // The format looks like this
     //  -----------------------------------------------------
-    // |  icon + name                                        |
+    // |  name                                               |
     // |                                                  PR |
     // | --------------------------------------------------- |
     // |                                                     |
@@ -886,20 +882,20 @@ listener = new RFPInstreamAdLoadListener() {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1531286945"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1534301848"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1531286945"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1534301848"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1531286945" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1531286945"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1534301848" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1534301848"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

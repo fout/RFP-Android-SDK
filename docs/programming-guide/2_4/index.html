@@ -13,19 +13,19 @@
     <title>カスタムインフィード広告 :: RFP-Android-SDK Docs</title>
     
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1531286945" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1531286945" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1534301848" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1534301848" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1531286945" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1534301848" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1531286945"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1534301848"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1531286945"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1531286945"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1534301848"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1534301848"></script>
 <script type="text/javascript">
     
         var baseurl = "\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1531286945"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1534301848"></script>
 
     
   </div>
@@ -504,7 +504,6 @@ public class MyActivity extends Activity {
                 holder.setData(adData);
 
                 loadAdImage(adData, holder.adImage, null);
-                loadAdIconImage(adData, holder.iconImage, null);
             }
         };
         adPlacer.registerAdViewBinder(adViewBinder);
@@ -520,14 +519,12 @@ public class MyActivity extends Activity {
         TextView advertiserName;
         TextView adText;
         ImageView adImage;
-        ImageView iconImage;
         TextView adSponsoredLabel;
 
         public AdViewHolder(View convertView) {
             advertiserName = (TextView) convertView.findViewById(R.id.custom_instream_advertiser_name);
             adText = (TextView) convertView.findViewById(R.id.custom_instream_ad_text);
             adImage = (ImageView) convertView.findViewById(R.id.custom_instream_ad_image);
-            iconImage = (ImageView) convertView.findViewById(R.id.custom_instream_advertiser_icon);
             adSponsoredLabel = (TextView) convertView.findViewById(R.id.custom_instream_sponsor_name);
         }
 
@@ -547,6 +544,8 @@ public class MyActivity extends Activity {
 <p><a name="infeed/custom/display_param"></a></p>
 
 <h3 id="カスタムインフィード広告の表示に用いるパラメーター">カスタムインフィード広告の表示に用いるパラメーター</h3>
+
+<p><code>jp.fout.rfp.android.sdk.model.RFPInstreamInfoModel</code>を合わせて参照ください。</p>
 
 <table>
 <thead>
@@ -571,21 +570,33 @@ public class MyActivity extends Activity {
 </tr>
 
 <tr>
+<td>position</td>
+<td>広告案件の相対位置</td>
+<td><code>3</code></td>
+</tr>
+
+<tr>
 <td>displayedAdvertiser</td>
 <td>表記広告主名</td>
 <td><code>飲料会社 A社</code></td>
 </tr>
 
 <tr>
-<td>iconImage</td>
-<td>アイコン型の正方形画像(114x114 pixel固定)</td>
-<td>下記メソッドを呼び出してください</td>
+<td>creative_url</td>
+<td>バナー画像URL</td>
+<td><code>https://example.rfp.fout.jp/image.jpg</code></td>
 </tr>
 
 <tr>
-<td>mainImage</td>
-<td>バナー型の矩形画像など(広告枠IDごとにサイズ可変)</td>
-<td>下記メソッドを呼び出してください</td>
+<td>creative_width</td>
+<td>バナー画像(またはVideo)のサイズ(幅)</td>
+<td><code>640</code></td>
+</tr>
+
+<tr>
+<td>creative_height</td>
+<td>バナー画像(またはVideo)のサイズ(高さ)</td>
+<td><code>360</code></td>
 </tr>
 </tbody>
 </table>
@@ -615,19 +626,15 @@ listener = new RFPInstreamAdPlacerListener() {
     @Override
     public void onAdMainImageLoaded(String imageUrl) {
     }
-    // (4) 広告 View のアイコン画像ロード完了時
-    @Override
-    public void onAdIconImageLoaded(String imageUrl) {
-    }
-    // (5) 広告のロード失敗時
+    // (4) 広告のロード失敗時
     @Override
     public void onAdsLoadedFail(String errorString) {
     }
-    // (6) 広告 View の画像ロード失敗時
+    // (5) 広告 View の画像ロード失敗時
     @Override
     public void onAdImageLoadedFail(String imageUrl, String errorString) {
     }
-    // (7) 広告 View のクリック時
+    // (6) 広告 View のクリック時
     @Override
     public void onAdClicked(String redirectURL) {
     }
@@ -958,20 +965,20 @@ public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt; items) {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1531286945"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1534301848"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1531286945"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1531286945"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1534301848"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1534301848"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1531286945" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1531286945"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1534301848" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1534301848"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
