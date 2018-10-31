@@ -11,15 +11,6 @@
     
     
     <item>
-      <title>はじめに</title>
-      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_1/</guid>
-      <description>AndroidManifest.xml Media ID の取得 コード内初期化 AndroidManifest.xml AndroidManifest.xmlに次の内容を記述ください。 &amp;lt;!-- 必要なパーミッション --&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot; /&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.ACCESS_NETWORK_STATE&amp;quot; /&amp;gt; &amp;lt;application&amp;gt; &amp;lt;!-- google play se</description>
-    </item>
-    
-    <item>
       <title>広告枠IDの取得</title>
       <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -43,7 +34,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_4/</guid>
-      <description>カスタムインフィード広告のロード カスタムインフィード広告の表示に用いるパラメーター カスタムインフィード広告の表示時のイベント取得 カスタムイン</description>
+      <description>カスタムインフィード広告のロード カスタムインフィード広告の表示に用いるパラメーター カスタムインフィード広告の表示 広告IDの取得 簡易版インフィ</description>
     </item>
     
     <item>

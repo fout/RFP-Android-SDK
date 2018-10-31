@@ -13,19 +13,19 @@
     <title>インストールガイド :: RFP-Android-SDK Docs</title>
     
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1538451263" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1538451263" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1538451263" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1538451263" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1538451263" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1538451263" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1538451263" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1538451263" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1540952615" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1538451263" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1540952615" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1538451263"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1540952615"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1538451263"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1538451263"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1540952615"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1540952615"></script>
 <script type="text/javascript">
     
         var baseurl = "\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1538451263"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1540952615"></script>
 
     
   </div>
@@ -77,13 +77,35 @@
  
   
     
+    <li data-nav-id="/RFP-Android-SDK/quick-start/" title="クイックスタート" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/quick-start/">
+          <b>1. </b>クイックスタート
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
     <li data-nav-id="/RFP-Android-SDK/installation-guide/" title="インストールガイド" class="dd-item 
         parent
         active
         
         ">
       <a href="/RFP-Android-SDK/installation-guide/">
-          <b>1. </b>インストールガイド
+          <b>2. </b>インストールガイド
           
       </a>
       
@@ -105,7 +127,7 @@
         
         ">
       <a href="/RFP-Android-SDK/programming-guide/">
-          <b>2. </b>プログラミングガイド
+          <b>3. </b>プログラミングガイド
           
       </a>
       
@@ -116,25 +138,6 @@
           
           
         
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_1/" title="はじめに" class="dd-item ">
-        <a href="/RFP-Android-SDK/programming-guide/2_1/">
-        はじめに
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -251,7 +254,7 @@
         
         ">
       <a href="/RFP-Android-SDK/faq/">
-          <b>3. </b>FAQ
+          <b>4. </b>FAQ
           
       </a>
       
@@ -273,7 +276,7 @@
         
         ">
       <a href="/RFP-Android-SDK/changelog/">
-          <b>4. </b>CHANGELOG
+          <b>5. </b>CHANGELOG
           
       </a>
       
@@ -411,6 +414,7 @@
 <ul>
 <li><a href="#rfp-android-sdkライブラリの追加">RFP-Android-SDKライブラリの追加</a></li>
 <li><a href="#google-play-servicesライブラリの追加">Google Play Servicesライブラリの追加</a></li>
+<li><a href="#androidmanifestへの追加設定">AndroidManifestへの追加設定</a></li>
 <li><a href="#exoplayerライブラリの追加">ExoPlayerライブラリの追加</a></li>
 </ul></li>
 </ul></li>
@@ -442,6 +446,7 @@
 <ul>
 <li><a href="#android-studio/android-sdk">RFP-Android-SDK ライブラリの追加</a></li>
 <li><a href="#android-studio/google-play-service">Google Play Servicesライブラリの追加</a></li>
+<li><a href="#android-studio/manifest">AndroidManifestへの追加設定</a></li>
 <li><a href="#android-studio/exoplayer">ExoPlayerライブラリの追加</a></li>
 </ul></li>
 </ul>
@@ -469,7 +474,7 @@
 }
 
 dependencies {
-    compile 'jp.fout.rfp.android.sdk:rfp-sdk:x.x.x'
+    implementation 'jp.fout.rfp.android.sdk:rfp-sdk:x.x.x'
 }
 </code></pre>
 
@@ -481,7 +486,7 @@ dependencies {
 <li><p>Google Play Services SDK をまだインストールしていない場合は <a href="http://developer.android.com/google/play-services/setup.html">SDK Manager からインストールする</a>。</p></li>
 
 <li><p>RFP-Android-SDK を使用するモジュールの build.gradle の dependencies 配下に、
-<code>compile 'com.google.android.gms:play-services-base:11.0.+'</code> を追記する。
+<code>implementation 'com.google.android.gms:play-services-base:11.0.+'</code> を追記する。
 Google Play Servicesのバージョンは8.3以降を対象としています。(弊社での動作確認は主に11以降で行っています。)</p></li>
 
 <li><p>RFP-Android-SDK を使用するプロジェクトの build.gradle の android, defaultConfig 配下の
@@ -503,6 +508,24 @@ Google Play Servicesのバージョンは8.3以降を対象としています。
         // An alternative URL is 'https://dl.google.com/dl/android/maven2/'
     }
 }
+</code></pre>
+
+<p><a name="android-studio/manifest"></a></p>
+
+<h3 id="androidmanifestへの追加設定">AndroidManifestへの追加設定</h3>
+
+<p>AndroidManifest.xmlに次の内容を記述ください。</p>
+
+<pre><code class="language-xml">&lt;!-- 必要なパーミッション --&gt;
+&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+
+&lt;application&gt;
+    &lt;!--  google play serviceのライブラリを使うための記述 --&gt;
+    &lt;meta-data
+        android:name=&quot;com.google.android.gms.version&quot;
+        android:value=&quot;@integer/google_play_services_version&quot; /&gt;
+&lt;/application&gt;
 </code></pre>
 
 <p><a name="android-studio/exoplayer"></a></p>
@@ -581,6 +604,25 @@ dependencies {
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -689,22 +731,6 @@ dependencies {
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -747,7 +773,7 @@ dependencies {
 
 
         
-            <a class="nav nav-prev" href="/RFP-Android-SDK/" title="TOP"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/RFP-Android-SDK/quick-start/" title="クイックスタート"> <i class="fa fa-chevron-left"></i></a>
         
         
             <a class="nav nav-next" href="/RFP-Android-SDK/programming-guide/" title="プログラミングガイド" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -759,20 +785,20 @@ dependencies {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1538451263"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1538451263"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1538451263"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1538451263"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1538451263"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1538451263"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1538451263"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1540952615"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1538451263"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1538451263"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1538451263"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1540952615"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1538451263" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1538451263"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1540952615" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1540952615"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

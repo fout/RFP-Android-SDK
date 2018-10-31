@@ -11,20 +11,6 @@
     
     
     <item>
-      <title>Introduction</title>
-      <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_1/</guid>
-      <description>AndroidManifest.xml Acquisition of Media ID Initialization within code  
-AndroidManifest.xml Describe the following content in AndroidManifest.xml.
-&amp;lt;!-- Required permissions --&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot; /&amp;gt; &amp;lt;uses-permission android:name=&amp;quot;android.permission.ACCESS_NETWORK_STATE&amp;quot; /&amp;gt; &amp;lt;application&amp;gt; &amp;lt;!-- Description for using the google play service library --&amp;gt; &amp;lt;meta-data android:name=&amp;quot;com.google.android.gms.version&amp;quot; android:value=&amp;quot;@integer/google_play_services_version&amp;quot; /&amp;gt; &amp;lt;/application&amp;gt;  
-Acquisition of Media ID Register from each management screen and issue Media ID.
-(At the current stage, you should contact your representative)
-Since this Media ID is used for the app identifier, make sure you do not forget it.</description>
-    </item>
-    
-    <item>
       <title>Acquisition of advertising framework Id</title>
       <link>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -52,7 +38,7 @@ Displaying simple infeed advertising Implement the following using RFPInstreamAd
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_4/</guid>
-      <description>Loading customized infeed advertising Parameters used to display customized infeed advertising Acquisition of events when displaying customized infeed advertising Displaying customized infeed advertising When using other than ListView Acquisition of advertising ID  When you wish to display in a more flexible way than with simple infeed advertising, it is possible to use a customized infeed advertising function.
+      <description>Loading customized infeed advertising Parameters used to display customized infeed advertising Displaying customized infeed advertising Acquisition of advertising ID  When you wish to display in a more flexible way than with simple infeed advertising, it is possible to use a customized infeed advertising function.
 Be sure to include a description in implementation so that the user recognizes and understands that the implemented advertising location is for an advertisement.</description>
     </item>
     

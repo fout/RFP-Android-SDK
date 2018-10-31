@@ -17,6 +17,20 @@
   </url>
   
   <url>
+    <loc>https://fout.github.io/RFP-Android-SDK/quick-start/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://fout.github.io/RFP-Android-SDK/en/quick-start/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://fout.github.io/RFP-Android-SDK/quick-start/"
+                />
+  </url>
+  
+  <url>
     <loc>https://fout.github.io/RFP-Android-SDK/installation-guide/</loc>
     <xhtml:link
                 rel="alternate"
@@ -27,34 +41,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://fout.github.io/RFP-Android-SDK/installation-guide/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://fout.github.io/RFP-Android-SDK/programming-guide/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://fout.github.io/RFP-Android-SDK/en/programming-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://fout.github.io/RFP-Android-SDK/programming-guide/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://fout.github.io/RFP-Android-SDK/programming-guide/2_1/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://fout.github.io/RFP-Android-SDK/programming-guide/2_1/"
                 />
   </url>
   
@@ -125,6 +111,20 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://fout.github.io/RFP-Android-SDK/programming-guide/2_6/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://fout.github.io/RFP-Android-SDK/programming-guide/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://fout.github.io/RFP-Android-SDK/en/programming-guide/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://fout.github.io/RFP-Android-SDK/programming-guide/"
                 />
   </url>
   

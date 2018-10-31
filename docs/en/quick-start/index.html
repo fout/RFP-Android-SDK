@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.34" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
+
+    <title>Quick Start :: RFP-Android-SDK Docs</title>
+    
+    
+    <link href="/RFP-Android-SDK/css/nucleus.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1540952615" rel="stylesheet">
+    
+      <link href="/RFP-Android-SDK/css/theme-green.css?1540952615" rel="stylesheet">
+    
+
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1540952615"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/RFP-Android-SDK/en/quick-start/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://fout.github.io/RFP-Android-SDK/en">
+    RFP-Android-SDK Docs
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1540952615"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1540952615"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/RFP-Android-SDK\/en";
+    
+</script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1540952615"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/quick-start/" title="Quick Start" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/RFP-Android-SDK/en/quick-start/">
+          <b>1. </b>Quick Start
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/installation-guide/" title="Installation Guide" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/en/installation-guide/">
+          <b>2. </b>Installation Guide
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/programming-guide/" title="Programming Guide" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/en/programming-guide/">
+          <b>3. </b>Programming Guide
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_2/" title="Acquisition of advertising framework Id" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_2/">
+        Acquisition of advertising framework Id
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_3/" title="Simple infeed advertising" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_3/">
+        Simple infeed advertising
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_4/" title="Customized infeed advertising" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_4/">
+        Customized infeed advertising
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_5/" title="Support for video advertising" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_5/">
+        Support for video advertising
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/en/programming-guide/2_6/" title="Set HTTP request timeout interval" class="dd-item ">
+        <a href="/RFP-Android-SDK/en/programming-guide/2_6/">
+        Set HTTP request timeout interval
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/en/faq/">
+          <b>4. </b>FAQ
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/en/changelog/" title="CHANGELOG" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/en/changelog/">
+          <b>5. </b>CHANGELOG
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/fout/RFP-Android-SDK"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="ja" value="/RFP-Android-SDK/quick-start/">日本語</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="en" value="/RFP-Android-SDK/en/quick-start/" selected>English</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Docs are generated by using <a href="http://gohugo.io/">Hugo</a>.</p>
+<p>Theme provided by <a href="https://github.com/matcornic/hugo-theme-learn/">hugo-theme-learn</a>.</p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/RFP-Android-SDK/en/'>TOP</a> > Quick Start
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#initializing-the-sdk">Initializing the SDK</a></li>
+<li><a href="#loading-advertisements">Loading advertisements</a></li>
+<li><a href="#displaying-advertisements">Displaying advertisements</a>
+<ul>
+<li><a href="#sending-advertisements-events">Sending advertisements events</a>
+<ul>
+<li><a href="#notifying-impression">Notifying impression</a></li>
+<li><a href="#processing-transitions-when-clicking-advertisements">Processing transitions when clicking advertisements</a></li>
+<li><a href="#timing-of-impression-notification">Timing of impression notification</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Quick Start</h1>
+          
+
+        
+
+
+
+
+<ul>
+<li><a href="#start/env">Prerequisites</a></li>
+<li><a href="#start/init">Initializing the SDK</a></li>
+<li><a href="#start/ad_load">Loading advertisements</a></li>
+<li><a href="#start/ad_display">Displaying advertisements</a></li>
+<li><a href="#start/ad_event">Sending advertisements events</a></li>
+</ul>
+
+<p>This chapter will explain the procedure for displaying the advertisement in the application and measuring the effectiveness of the advertisement.<br>
+For the details, please refer to <a href="../programming-guide">3.Programming Guide</a>.</p>
+
+<p><a name="start/env"></a></p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+<li>Add the following to <code>build.gradle</code> to install RFP Android SDK and Google Play Services SDK.</li>
+</ul>
+
+<pre><code>repositories {
+    maven { url 'https://raw.github.com/fout/RFP-Android-SDK/master/repos/' }
+}
+
+dependencies {
+    implementation 'jp.fout.rfp.android.sdk:rfp-sdk:x.x.x'
+    implementation 'com.google.android.gms:play-services-base:11.0.+'
+}
+</code></pre>
+
+<div class="notices note" ><p>For the details, please refer to <a href="../installation-guide">Installtion Guide</a>.</p>
+</div>
+
+
+<ul>
+<li>Register from the management screen to issue the Media ID and advertising framework ID(<code>adSpotId</code>) .
+<strong>(At the current stage, inquiries should be made to the representative)</strong></li>
+</ul>
+
+<div class="notices note" ><p>Media ID uses the app identification.<br>
+Advertising framework ID (<code>adSpotId</code>) is a unique identifier used to distinguish an advertisement framework,
+See <a href="../programming-guide/2_2">Acquisition of advertising framework ID</a> for details on advertising framework ID.</p>
+</div>
+
+
+<p><a name="start/init"></a></p>
+
+<h2 id="initializing-the-sdk">Initializing the SDK</h2>
+
+<p>RFP SDK is initialized with the Media ID acquired as described above as the argument.</p>
+
+<pre><code class="language-java">RFP.init(this.getApplicationContext(), &quot;YOUR_MEDIA_ID&quot;);
+</code></pre>
+
+<p>Please note that <strong>unless initialization takes place, the general acquisition of advertisements, to be described later, cannot be performed</strong>.</p>
+
+<p><a name="start/ad_load"></a></p>
+
+<h2 id="loading-advertisements">Loading advertisements</h2>
+
+<p>Create <code>RFPInstreamAdPlacer</code> instance, and call <code>loadAd()</code> to load advertisements.
+Set <code>RFPInstreamAdPlacerListener</code> to get callback.</p>
+
+<pre><code class="language-java">RFPInstreamAdPlacer adPlacer;
+RFPInstreamAdPlacerListener listener;
+
+adPlacer = RFP.createInstreamAdPlacer(getActivity().getApplicationContext(), &quot;YOUR_ADSPOT_ID&quot;);
+
+adPlacer.setAdListener(new RFPInstreamAdPlacerListener() {
+  // callback from the loadAd()
+  public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt;items) {
+
+  }
+});
+
+// start to load advertisement
+adPlacer.loadAd();
+</code></pre>
+
+<p><a name="start/ad_display"></a></p>
+
+<h2 id="displaying-advertisements">Displaying advertisements</h2>
+
+<p>The metadata information of the advertisement is in the <code>RFPInstreamInfoModel</code>, and build the advertisement&rsquo;s view based on this.</p>
+
+<pre><code class="language-java">void setData(RFPInstreamInfoModel data) {
+    advertiserName.setText(data.title());
+    adText.setText(data.content());
+
+    String displayedAdvertiser = data.displayedAdvertiser();
+    if (null != displayedAdvertiser &amp;&amp; 0 &lt; displayedAdvertiser.length()) {
+        adSponsoredLabel.setText(displayedAdvertiser);
+    }
+
+    (new ImageLoader(data.creative_url(), adImage)).execute();
+}
+</code></pre>
+
+<p><a name="start/ad_event"></a></p>
+
+<h3 id="sending-advertisements-events">Sending advertisements events</h3>
+
+<p>For measuring the advertisement&rsquo;s, it is necessary to notify the events of the advertisement.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Action</th>
+<th align="left">Notify Timing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">impression</td>
+<td align="left">when advertisement&rsquo;s display is completed</td>
+</tr>
+
+<tr>
+<td align="left">click</td>
+<td align="left">when advertisement is clicked</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="notifying-impression">Notifying impression</h4>
+
+<p>After advertisement displayed, please call the following method to send impression event.</p>
+
+<pre><code class="language-java">measureImp(RFPInstreamInfoModel adItem);
+</code></pre>
+
+<h4 id="processing-transitions-when-clicking-advertisements">Processing transitions when clicking advertisements</h4>
+
+<p>When the advertisement is clicked, user is appropriately transitioned by calling the following method.</p>
+
+<pre><code class="language-java">sendClickEvent(RFPInstreamInfoModel adItem);
+</code></pre>
+
+<p>Advertisement&rsquo;s clicked notification will be posted to <code>RFPInstreamAdPlacerListener onAdClicked</code>.</p>
+
+<p><a name="start/viewable_imp"></a></p>
+
+<h4 id="timing-of-impression-notification">Timing of impression notification</h4>
+
+<p>In order to guarantee that advertisements are viewable, this SDK recommends <strong>viewable impression</strong>.
+Advertisement&rsquo;s viewable impression must satisfy the impression conditions and must satisfy the following.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Advertisement&rsquo;s type</th>
+<th align="left">conditions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Display ads</td>
+<td align="left">condition1. at least 50% of the advertisement is visible　<br> condition2. visible for at least 1 second</td>
+</tr>
+
+<tr>
+<td align="left">Video ads</td>
+<td align="left">condition1. at least 50% of the advertisement is visible　<br> condition2. visible for at least 2 consecutive seconds</td>
+</tr>
+</tbody>
+</table>
+
+
+<figure >
+    
+        <img src="impression.png" />
+    
+    
+    <figcaption>
+        <h4>Ad&#39;s viewable impression</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>More details, please refer to <a href="https://www.jiaa.org/dbps_data/_material_/localhost/topics/20170531viewable_measurement_guidance.pdf">JIAA(Japanese)</a>, and <a href="https://www.iab.com/wp-content/uploads/2015/06/MRC-Viewable-Ad-Impression-Measurement-Guideline.pdf">IAB/MRC(English)</a>.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/RFP-Android-SDK/en/" title="TOP"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/RFP-Android-SDK/en/installation-guide/" title="Installation Guide" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1540952615"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1540952615"></script>
+
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1540952615" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1540952615"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
