@@ -10,22 +10,22 @@
     <link rel="shortcut icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
 
-    <title>広告枠IDの取得 :: RFP-Android-SDK Docs</title>
+    <title>SDKの初期化 :: RFP-Android-SDK Docs</title>
     
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1541645363" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1540952615" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1541645363" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1541645363"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -33,7 +33,9 @@
       }
       
     </style>
-    
+      
+  <link href="/RFP-Android-SDK/css/tabs.css?1541645363" rel="stylesheet">
+
   </head>
   <body class="" data-url="/RFP-Android-SDK/programming-guide/2_2/">
     <nav id="sidebar" class="">
@@ -54,14 +56,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1540952615"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1540952615"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1541645363"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1541645363"></script>
 <script type="text/javascript">
     
         var baseurl = "\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1540952615"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1541645363"></script>
 
     
   </div>
@@ -146,9 +148,28 @@
  
   
     
-      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_2/" title="広告枠IDの取得" class="dd-item active">
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_1/" title="事前準備" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_1/">
+        事前準備
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_2/" title="SDKの初期化" class="dd-item active">
         <a href="/RFP-Android-SDK/programming-guide/2_2/">
-        広告枠IDの取得
+        SDKの初期化
         
         </a>
     </li>
@@ -399,7 +420,7 @@
             
           
           
-            <a href='/RFP-Android-SDK/'>TOP</a> > <a href='/RFP-Android-SDK/programming-guide/'>プログラミングガイド</a> > 広告枠IDの取得
+            <a href='/RFP-Android-SDK/'>TOP</a> > <a href='/RFP-Android-SDK/programming-guide/'>プログラミングガイド</a> > SDKの初期化
           
          
           
@@ -423,29 +444,20 @@
         
         <div id="body-inner">
           
-            <h1>広告枠IDの取得</h1>
+            <h1>SDKの初期化</h1>
           
 
         
 
 
-<p><strong><em>現在は、広告枠の登録設定については担当者へお問い合わせください。</em></strong></p>
+<p>RFPで広告に関する処理を行うためには、まずSDKの初期化処理を呼ぶ必要があります。</p>
 
-<p>管理画面から広告枠 ID を発行します。次の情報を設定し、広告枠IDが払い出されます。</p>
+<pre><code class="language-java">RFP.init(getApplicationContext(), &quot;YOUR_MEDIA_ID&quot;);
+</code></pre>
 
-<ul>
-<li>広告枠名</li>
-<li>広告画像サイズ</li>
-<li><a href="../2_3/#infeed/simple/format">広告フォーマット</a>(後述する簡易版インフィード広告のみ必要）</li>
-<li>広告案件数</li>
-<li>広告位置配列</li>
-<li>HTML, width, height （WebView 上で描画するフォーマットを選択した場合のみ必要）</li>
-</ul>
+<p>この処理は広告関連処理の前に必ず一度呼ぶ必要があります。</p>
 
-<p>現在はテスト用に、次の情報が設定されています（テスト用途に必要な範囲で記載します）。
-本物の案件とリンクしているため、下記案件数を下回る場合があります。その際は、担当者までご連絡ください。</p>
-
-<p>media_id に 2 をセットした上で、 <code>test</code> 等の任意の広告枠 ID (adspot_id) をセットしてください</p>
+<p>処理毎に呼び出す必要はありません。</p>
 
 
 <footer class=" footline" >
@@ -533,6 +545,25 @@
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -654,7 +685,7 @@
 
 
         
-            <a class="nav nav-prev" href="/RFP-Android-SDK/programming-guide/" title="プログラミングガイド"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/RFP-Android-SDK/programming-guide/2_1/" title="事前準備"> <i class="fa fa-chevron-left"></i></a>
         
         
             <a class="nav nav-next" href="/RFP-Android-SDK/programming-guide/2_3/" title="簡易版インフィード広告" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -666,24 +697,24 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1541645363"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1541645363"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1540952615" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1540952615"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1541645363" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1541645363"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    
+    <script src="/RFP-Android-SDK/js/tabs.js?1541645363"></script>
 
   </body>
 </html>

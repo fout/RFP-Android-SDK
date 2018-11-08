@@ -13,19 +13,19 @@
     <title>クイックスタート :: RFP-Android-SDK Docs</title>
     
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1541645363" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1540952615" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1541645363" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1541645363"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -33,7 +33,9 @@
       }
       
     </style>
-    
+      
+  <link href="/RFP-Android-SDK/css/tabs.css?1541645363" rel="stylesheet">
+
   </head>
   <body class="" data-url="/RFP-Android-SDK/quick-start/">
     <nav id="sidebar" class="">
@@ -54,14 +56,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1540952615"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1540952615"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1541645363"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1541645363"></script>
 <script type="text/javascript">
     
         var baseurl = "\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1540952615"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1541645363"></script>
 
     
   </div>
@@ -146,9 +148,28 @@
  
   
     
-      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_2/" title="広告枠IDの取得" class="dd-item ">
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_1/" title="事前準備" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_1/">
+        事前準備
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_2/" title="SDKの初期化" class="dd-item ">
         <a href="/RFP-Android-SDK/programming-guide/2_2/">
-        広告枠IDの取得
+        SDKの初期化
         
         </a>
     </li>
@@ -409,18 +430,15 @@
 <ul>
 <li>
 <ul>
-<li><a href="#前提条件">前提条件</a></li>
+<li><a href="#事前準備">事前準備</a></li>
+<li><a href="#ライブラリの追加">ライブラリの追加</a></li>
 <li><a href="#sdkの初期化">SDKの初期化</a></li>
 <li><a href="#広告を取得する">広告を取得する</a></li>
 <li><a href="#広告を表示する">広告を表示する</a></li>
 <li><a href="#広告イベントを送信する">広告イベントを送信する</a>
 <ul>
-<li>
-<ul>
 <li><a href="#広告のインプレッション通知">広告のインプレッション通知</a></li>
 <li><a href="#広告のクリック時の遷移処理">広告のクリック時の遷移処理</a></li>
-<li><a href="#インプレッション通知のタイミングについて">インプレッション通知のタイミングについて</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -444,26 +462,25 @@
 
 
 
-<ul>
-<li><a href="#start/env">前提条件</a></li>
-<li><a href="#start/init">SDKの初期化</a></li>
-<li><a href="#start/ad_load">広告を取得する</a></li>
-<li><a href="#start/ad_display">広告を表示する</a></li>
-<li><a href="#start/ad_event">広告イベントを送信する</a></li>
-</ul>
-
-<p>本章では、アプリに広告を表示し、広告の効果を測定するための手順を説明します。<br>
+<p>本章では、アプリに広告を表示し、広告の効果を測定するための手順を説明します。<br />
 詳細な仕様については、<a href="../programming-guide">3.プログラミングガイド</a>をご参照ください。</p>
 
-<p><a name="start/env"></a></p>
+<h2 id="事前準備">事前準備</h2>
 
-<h2 id="前提条件">前提条件</h2>
+<p>管理画面からメディアIDと広告枠IDを取得してください。</p>
 
-<ul>
-<li><code>build.gradle</code> に以下を追加して、RFP Android SDKとGoogle Play Services SDK をインストールします。</li>
-</ul>
+<p><strong>(現段階では担当者にお問い合わせください)</strong></p>
 
-<pre><code>repositories {
+<div class="notices note" ><p>メディアIDはアプリの識別に利用します。広告枠IDは広告枠を一意に定義したIDです。<br />
+メディアIDおよび広告枠IDの詳細は<a href="../programming-guide/2_1">【プログラミングガイド・事前準備】</a>をご確認ください。</p>
+</div>
+
+
+<h2 id="ライブラリの追加">ライブラリの追加</h2>
+
+<p><code>build.gradle</code> に以下を追加して、RFP Android SDKとGoogle Play Services SDKを追加します。</p>
+
+<pre><code class="language-groovy">repositories {
     maven { url 'https://raw.github.com/fout/RFP-Android-SDK/master/repos/' }
 }
 
@@ -473,56 +490,39 @@ dependencies {
 }
 </code></pre>
 
-<div class="notices note" ><p>詳細は<a href="../installation-guide">インストールガイド</a>をご参照ください。</p>
+<div class="notices note" ><p>詳細は<a href="../installation-guide">【インストールガイド】</a>をご参照ください。</p>
 </div>
 
-
-<ul>
-<li>管理画面からMedia ID と広告枠ID (<code>adSpotId</code>) を取得してください。
-<strong>(現段階では担当者にお問い合わせください)</strong></li>
-</ul>
-
-<div class="notices note" ><p>Media ID はアプリの識別に利用します。<br>
-広告枠 ID は広告枠を一意に定義したIDです。
-広告枠 ID 詳細は<a href="../programming-guide/2_2">広告枠ID の取得</a>をご確認ください。</p>
-</div>
-
-
-<p><a name="start/init"></a></p>
 
 <h2 id="sdkの初期化">SDKの初期化</h2>
 
-<p>上記で取得した Media ID を引数に、SDK を初期化します。</p>
+<p>上記で取得したメディアIDを引数に、SDKを初期化します。</p>
 
-<pre><code class="language-java">RFP.init(this.getApplicationContext(), &quot;YOUR_MEDIA_ID&quot;);
+<pre><code class="language-java">RFP.init(getApplicationContext(), &quot;YOUR_MEDIA_ID&quot;);
 </code></pre>
 
 <p>この <strong>初期化を行わない限り、後述する広告の取得全般を行う事ができません</strong> ので注意して下さい。</p>
 
-<p><a name="start/ad_load"></a></p>
-
 <h2 id="広告を取得する">広告を取得する</h2>
 
-<p><code>RFPInstreamAdPlacer</code> のインスタンスを生成し、 loadAd() メソッドで広告を取得します。
-取得した広告はリスナーによって通知されるので、あらかじめ RFPInstreamAdPlacerListener を設定しておく必要があります。</p>
+<p><code>RFPInstreamAdPlacer</code> のインスタンスを生成し、 <code>loadAd()</code> メソッドで広告を取得します。
+取得した広告はリスナーによって通知されるので、あらかじめ <code>RFPInstreamAdPlacerListener</code> を設定しておく必要があります。</p>
 
 <pre><code class="language-java">RFPInstreamAdPlacer adPlacer;
-RFPInstreamAdPlacerListener listener;
 
-adPlacer = RFP.createInstreamAdPlacer(getActivity().getApplicationContext(), &quot;YOUR_ADSPOT_ID&quot;);
+adPlacer = RFP.createInstreamAdPlacer(getApplicationContext(), &quot;YOUR_ADSPOT_ID&quot;);
 
 adPlacer.setAdListener(new RFPInstreamAdPlacerListener() {
-  // RFP SDK から広告案件情報のロードコールバック
-  public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt;items) {
-
-  }
+    // RFP SDK から広告案件情報のロードコールバック
+    public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt; items) {
+        // 広告の表示
+    }
+    // ... ...
 });
 
 // 広告読み込み開始
 adPlacer.loadAd();
 </code></pre>
-
-<p><a name="start/ad_display"></a></p>
 
 <h2 id="広告を表示する">広告を表示する</h2>
 
@@ -532,13 +532,8 @@ adPlacer.loadAd();
 <pre><code class="language-java">void setData(RFPInstreamInfoModel data) {
     advertiserName.setText(data.title());
     adText.setText(data.content());
-
-    String displayedAdvertiser = data.displayedAdvertiser();
-    if (null != displayedAdvertiser &amp;&amp; 0 &lt; displayedAdvertiser.length()) {
-        adSponsoredLabel.setText(displayedAdvertiser);
-    }
-
-    (new ImageLoader(data.creative_url(), adImage)).execute();
+    adSponsoredLabel.setText(data.displayedAdvertiser());
+    loadImageFromUrl(adImage, data.creative_url);
 }
 </code></pre>
 
@@ -567,65 +562,19 @@ adPlacer.loadAd();
 </tbody>
 </table>
 
-<h4 id="広告のインプレッション通知">広告のインプレッション通知</h4>
+<h3 id="広告のインプレッション通知">広告のインプレッション通知</h3>
 
-<p>広告の表示が完了したら、<code>RFPInstreamAdPlacer</code>にある以下のメソッドを呼び出すことで、インプレッションを通知してください。</p>
+<p>広告の表示が完了したら、以下のメソッドを呼び出すことで、インプレッションを通知してください。</p>
 
-<pre><code class="language-java">measureImp(RFPInstreamInfoModel adItem);
+<pre><code class="language-java">RFPInstreamAdPlacer#measureImp(RFPInstreamInfoModel adItem);
 </code></pre>
 
-<h4 id="広告のクリック時の遷移処理">広告のクリック時の遷移処理</h4>
+<h3 id="広告のクリック時の遷移処理">広告のクリック時の遷移処理</h3>
 
-<p>広告がクリックされたら、<code>RFPInstreamAdPlacer</code>にある以下のメソッドを呼び出すことで、適切にユーザーを遷移させることができます。</p>
+<p>広告がクリックされたら、以下のメソッドを呼び出すことで、適切にユーザーを遷移させることができます。</p>
 
-<pre><code class="language-java">sendClickEvent(RFPInstreamInfoModel adItem);
+<pre><code class="language-java">RFPInstreamAdPlacer#sendClickEvent(RFPInstreamInfoModel adItem);
 </code></pre>
-
-<p>広告のクリック判定は、<code>RFPInstreamAdPlacerListener onAdClicked</code>による通知で取得できます。</p>
-
-<p><a name="start/viewable_imp"></a></p>
-
-<h4 id="インプレッション通知のタイミングについて">インプレッション通知のタイミングについて</h4>
-
-<p>ユーザーが広告を視認可能にすることを保証するため、本SDKは<strong>アドビューアブルインプレッション</strong>を推奨します。
-アドビューアブルインプレッションはインプレッションの条件を満たした上で、以下の条件を満たす必要があります。</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">広告種類</th>
-<th align="left">条件</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">静止画</td>
-<td align="left">条件1. 広告ピクセルの50%以上がビューアブルなスペースに表示される　<br> 条件2. 1秒以上連続して上記ピクセルが表示される</td>
-</tr>
-
-<tr>
-<td align="left">動画</td>
-<td align="left">条件1. 広告ピクセルの50%以上がビューアブルなスペースに表示される　<br> 条件2. 2秒以上連続して上記ピクセルが表示される</td>
-</tr>
-</tbody>
-</table>
-
-
-<figure >
-    
-        <img src="impression.png" />
-    
-    
-    <figcaption>
-        <h4>アドビューアブルインプレッションのイメージ</h4>
-        
-    </figcaption>
-    
-</figure>
-
-
-<p>詳しくは<a href="https://www.jiaa.org/dbps_data/_material_/localhost/topics/20170531viewable_measurement_guidance.pdf">JIAA(日本語)</a>,または<a href="https://www.iab.com/wp-content/uploads/2015/06/MRC-Viewable-Ad-Impression-Measurement-Guideline.pdf">IAB/MRC(英語)</a>をご確認ください。</p>
 
 
 <footer class=" footline" >
@@ -787,6 +736,22 @@ adPlacer.loadAd();
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -841,24 +806,24 @@ adPlacer.loadAd();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1541645363"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1541645363"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1540952615" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1540952615"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1541645363" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1541645363"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    
+    <script src="/RFP-Android-SDK/js/tabs.js?1541645363"></script>
 
   </body>
 </html>

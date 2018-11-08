@@ -1,0 +1,26 @@
+.rfp-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.rfp-nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.rfp-nav-tabs a.highlight {
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.rfp-tab-content > .rfp-tab-pane {
+  display: none;
+}
+
+.rfp-tab-content > .rfp-active {
+  display: block;
+}

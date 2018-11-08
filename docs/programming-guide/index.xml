@@ -11,12 +11,21 @@
     
     
     <item>
-      <title>広告枠IDの取得</title>
+      <title>事前準備</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_1/</guid>
+      <description>メディアIDの取得 メディアIDの登録設定については担当者へお問い合わせください。 広告枠IDの取得 広告枠の登録設定については担当者へお問い合わ</description>
+    </item>
+    
+    <item>
+      <title>SDKの初期化</title>
       <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_2/</guid>
-      <description>現在は、広告枠の登録設定については担当者へお問い合わせください。 管理画面から広告枠 ID を発行します。次の情報を設定し、広告枠IDが払い出されま</description>
+      <description>RFPで広告に関する処理を行うためには、まずSDKの初期化処理を呼ぶ必要があります。 RFP.init(getApplicationContext(), &amp;quot;YOUR_MEDIA_ID&amp;quot;); この処理は広告関連処理の前に必ず一度呼ぶ必要がありま</description>
     </item>
     
     <item>
@@ -34,7 +43,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_4/</guid>
-      <description>カスタムインフィード広告のロード カスタムインフィード広告の表示に用いるパラメーター カスタムインフィード広告の表示 広告IDの取得 簡易版インフィ</description>
+      <description>簡易版インフィード広告よりも柔軟な表示を行いたい場合などに、カスタム型のインフィード広告機能を利用することが出来ます。 カスタムインフィード広</description>
     </item>
     
     <item>

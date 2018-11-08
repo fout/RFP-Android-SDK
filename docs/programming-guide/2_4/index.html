@@ -13,19 +13,19 @@
     <title>カスタムインフィード広告 :: RFP-Android-SDK Docs</title>
     
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1540952615" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1540952615" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1541645363" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1541645363" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1540952615" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1541645363" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1541645363"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -33,7 +33,9 @@
       }
       
     </style>
-    
+      
+  <link href="/RFP-Android-SDK/css/tabs.css?1541645363" rel="stylesheet">
+
   </head>
   <body class="" data-url="/RFP-Android-SDK/programming-guide/2_4/">
     <nav id="sidebar" class="">
@@ -54,14 +56,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1540952615"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1540952615"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1541645363"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1541645363"></script>
 <script type="text/javascript">
     
         var baseurl = "\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1540952615"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1541645363"></script>
 
     
   </div>
@@ -146,9 +148,28 @@
  
   
     
-      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_2/" title="広告枠IDの取得" class="dd-item ">
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_1/" title="事前準備" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_1/">
+        事前準備
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_2/" title="SDKの初期化" class="dd-item ">
         <a href="/RFP-Android-SDK/programming-guide/2_2/">
-        広告枠IDの取得
+        SDKの初期化
         
         </a>
     </li>
@@ -415,12 +436,20 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#広告レイアウトの作成">広告レイアウトの作成</a>
 <ul>
-<li><a href="#カスタムインフィード広告のロード">カスタムインフィード広告のロード</a></li>
-<li><a href="#カスタムインフィード広告の表示に用いるパラメーター">カスタムインフィード広告の表示に用いるパラメーター</a></li>
-<li><a href="#カスタムインフィード広告の表示">カスタムインフィード広告の表示</a></li>
-<li><a href="#広告idの取得">広告IDの取得</a></li>
+<li><a href="#広告の表示に用いるパラメータ">広告の表示に用いるパラメータ</a></li>
+</ul></li>
+<li><a href="#広告リクエストの送信">広告リクエストの送信</a></li>
+<li><a href="#広告の取得">広告の取得</a></li>
+<li><a href="#広告の表示">広告の表示</a></li>
+<li><a href="#広告のイベントの送信">広告のイベントの送信</a>
+<ul>
+<li><a href="#クリックイベントの送信">クリックイベントの送信</a></li>
+<li><a href="#インプレッションイベントの送信">インプレッションイベントの送信</a>
+<ul>
+<li><a href="#インプレッション送信のタイミングについて">インプレッション送信のタイミングについて</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -444,78 +473,20 @@
 
 
 
-<ul>
-<li><a href="#infeed/custom/load">カスタムインフィード広告のロード</a></li>
-<li><a href="#infeed/custom/display_param">カスタムインフィード広告の表示に用いるパラメーター</a></li>
-<li><a href="#infeed/custom/display">カスタムインフィード広告の表示</a></li>
-<li><a href="#infeed/custom/adid">広告IDの取得</a></li>
-</ul>
-
 <p>簡易版インフィード広告よりも柔軟な表示を行いたい場合などに、カスタム型のインフィード広告機能を利用することが出来ます。</p>
 
-<p>実装する際に広告箇所が広告であることをユーザーが視認・理解できる文言を必ず記述して下さい。</p>
+<p>カスタムインフィード広告では自動で広告イベントを送信しないため、アプリケーション側で実装する必要があります。</p>
 
-<ul>
-<li>パラメーター <code>displayedAdvertiser</code> を使うことで広告ごとに適切な文言を表示することが出来ます。</li>
-</ul>
+<h2 id="広告レイアウトの作成">広告レイアウトの作成</h2>
 
-<p><a name="infeed/custom/load"></a></p>
+<p>通常のレイアウト同様に作成します。</p>
 
-<h3 id="カスタムインフィード広告のロード">カスタムインフィード広告のロード</h3>
+<div class="notices note" ><p>レイアウト作成時に広告箇所が広告であることをユーザーが視認・理解できる文言を必ず配置して下さい。
+<code>displayedAdvertiser</code>を使うことで広告ごとに適切な文言を表示することが出来ます。</p>
+</div>
 
-<p>RFPInstreamAdPlacer のインスタンスを生成し、 loadAd() メソッドで広告を取得します。
-取得した広告はリスナーによって通知されるので、あらかじめ RFPInstreamAdPlacerListener を設定しておく必要があります。</p>
 
-<pre><code class="language-java">public class YourRecyclerActivity extends Activity implements RFPInstreamAdPlacerListener {
-    private RFPInstreamAdPlacer adPlacer;
-    private AdsAdapter adapter;
-    private List&lt;Object&gt; yourContentsItemList;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.recycler);
-
-        adPlacer = RFP.createInstreamAdPlacer(getActivity().getApplicationContext(), &quot;YOUR_ADSPOT_ID&quot;);
-        adPlacer.setAdListener(this);
-        // 広告読み込み開始
-        adPlacer.loadAd();
-        RecyclerView yourAppRecycleView = findViewById(R.id.recycler);
-        // アプリ側の表示コンテンツを初期化
-        initializeyourContentsItemList();
-        rfpAdapter = new AdsAdapter(yourContentsItemList, adPlacer);
-        yourAppRecycleView.setAdapter(rfpAdapter);
-
-    }
-
-    // 広告のロード完了時
-    @Override
-    public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt;items) {
-    }
-    // 広告 View のメイン画像ロード完了時
-    @Override
-    public void onAdMainImageLoaded(String imageUrl) {
-    }
-    // 広告 View のメイン画像ロード失敗時
-    @Override
-    public void onAdImageLoadedFail(String imageUrl, String errorString) {
-    }
-    // 広告のロード失敗時
-    @Override
-    public void onAdsLoadedFail(String errorString) {
-    }
-    // 広告 View のクリック時
-    @Override
-    public void onAdClicked(String redirectURL) {
-    }
-}
-</code></pre>
-
-<p><a name="infeed/custom/display_param"></a></p>
-
-<h3 id="カスタムインフィード広告の表示に用いるパラメーター">カスタムインフィード広告の表示に用いるパラメーター</h3>
-
-<p><code>jp.fout.rfp.android.sdk.model.RFPInstreamInfoModel</code>を合わせて参照ください。</p>
+<h3 id="広告の表示に用いるパラメータ">広告の表示に用いるパラメータ</h3>
 
 <table>
 <thead>
@@ -528,63 +499,219 @@
 
 <tbody>
 <tr>
-<td>title</td>
+<td><code>title</code></td>
 <td>タイトル文言(全角20文字以内)</td>
-<td><code>TestAd</code></td>
+<td>TestAd</td>
 </tr>
 
 <tr>
-<td>content</td>
-<td>説明・紹介文(全角40~70文字以内)</td>
-<td><code>テスト広告です。</code></td>
+<td><code>content</code></td>
+<td>説明・紹介文(全角40〜70文字以内)</td>
+<td>テスト広告です。</td>
 </tr>
 
 <tr>
-<td>position</td>
+<td><code>position</code></td>
 <td>広告案件の相対位置</td>
-<td><code>3</code></td>
+<td>3</td>
 </tr>
 
 <tr>
-<td>displayedAdvertiser</td>
+<td><code>displayedAdvertiser</code></td>
 <td>表記広告主名</td>
-<td><code>飲料会社 A社</code></td>
+<td>飲料会社 A社</td>
 </tr>
 
 <tr>
-<td>creative_url</td>
+<td><code>creative_url</code></td>
 <td>バナー画像URL</td>
-<td><code>https://example.rfp.fout.jp/image.jpg</code></td>
+<td>https&#58;//example.com/image.jpg</td>
 </tr>
 
 <tr>
-<td>creative_width</td>
+<td><code>creative_width</code></td>
 <td>バナー画像(またはVideo)のサイズ(幅)</td>
-<td><code>640</code></td>
+<td>640</td>
 </tr>
 
 <tr>
-<td>creative_height</td>
+<td><code>creative_height</code></td>
 <td>バナー画像(またはVideo)のサイズ(高さ)</td>
-<td><code>360</code></td>
+<td>360</td>
 </tr>
 </tbody>
 </table>
 
-<p><a name="infeed/custom/display"></a></p>
+<h2 id="広告リクエストの送信">広告リクエストの送信</h2>
 
-<h3 id="カスタムインフィード広告の表示">カスタムインフィード広告の表示</h3>
+<p><code>RFP#createInstreamAdPlacer()</code>を使用して<code>RFPInstreamAdPlacer</code>のインスタンスを生成し、<code>loadAd()</code>を使用して広告リクエストを送信します。</p>
 
-<p><code>RFPInstreamInfoModel</code> には広告のメタ情報が設定されており、これをもとにビューを構築します。
-広告のレイアウトはアプリケーション側で作成する必要があります。</p>
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Java"></p>
 
-<div class="notices note" ><p><code>measureImp</code> と <code>sendClickEvent</code> をそれぞれ、広告を表示したときと広告をクリックしたときに呼び出す必要があります。</p>
+<pre><code class="language-java">RFPInstreamAdPlacer adPlacer = RFP.createInstreamAdPlacer(context, &quot;YOUR_ADSPOT_ID&quot;);
+adPlacer.loadAd(); // 広告読み込み開始
+</code></pre>
+
+<p></div></p>
+
+<p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">val adPlacer = RFP.createInstreamAdPlacer(context, &quot;YOUR_ADSPOT_ID&quot;)
+adPlacer.loadAd() // 広告読み込み開始
+</code></pre>
+
+<p></div></p>
+</div>
 </div>
 
 
-<pre><code class="language-java">class AdsAdapter extends RecyclerView.Adapter&lt;RecyclerView.ViewHolder&gt; {
-    RFPInstreamAdPlacer adPlacer;
+<p>取得する広告の数は引数により指定できます。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Java"></p>
+
+<pre><code class="language-java">Integer[] p = {0, 3, 6};
+List&lt;Integer&gt; positions = Arrays.asList(p);
+int count = positions.size();
+RFPInstreamAdPlacer adPlacer = RFP.createInstreamAdPlacer(context, &quot;YOUR_ADSPOT_ID&quot;, count, positions);
+adPlacer.loadAd(); // 広告読み込み開始
+</code></pre>
+
+<p></div></p>
+
+<p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">val positions = mutableListOf(0, 3, 6)
+val count = positions.size
+val adPlacer = RFP.createInstreamAdPlacer(context, &quot;YOUR_ADSPOT_ID&quot;, count, positions)
+adPlacer.loadAd() // 広告読み込み開始
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<div class="notices note" ><p><code>positions</code>は<strong>インフィード内における広告の位置を示すもの</strong>となります。<br />
+上記の例の場合、<strong>1番目、4番目、7番目</strong>の位置に広告を挿入するイメージとなります。</p>
+</div>
+
+
+<h2 id="広告の取得">広告の取得</h2>
+
+<p>取得した広告はリスナーに通知されるので、あらかじめ <code>RFPInstreamAdPlacerListener</code> を実装し設定しておく必要があります。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Java"></p>
+
+<pre><code class="language-java">class AdPlacerListener implements RFPInstreamAdPlacerListener {
+    @Override
+    public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt; items) {
+        // 広告のロード完了時
+    }
+    @Override
+    public void onAdsLoadedFail(String errorString) {
+        // 広告のロード失敗時
+    }
+    @Override
+    public void onAdClicked(String redirectURL) {
+        // 広告 View のクリック時
+        // sendClickEvent() 呼び出し後に発生します
+    }
+    @Override
+    public void onAdMainImageLoaded(String imageUrl) {
+        // 広告 View のメイン画像ロード完了時
+        // カスタムインフィード広告では使用されません
+    }
+    @Override
+    public void onAdImageLoadedFail(String imageUrl, String errorString) {
+        // 広告 View のメイン画像ロード失敗時
+        // カスタムインフィード広告では使用されません
+    }
+}
+</code></pre>
+
+<p></div></p>
+
+<p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">class AdPlacerListener : RFPInstreamAdPlacerListener {
+    override fun onAdsLoaded(items: MutableList&lt;out RFPInstreamInfoModel&gt;?) {
+        // 広告のロード完了時
+    }
+    override fun onAdsLoadedFail(errorString: String?) {
+        // 広告のロード失敗時
+    }
+    override fun onAdClicked(redirectUrl: String?) {
+        // 広告 View のクリック時
+        // sendClickEvent() 呼び出し後に発生します
+    }
+    override fun onAdMainImageLoaded(imageUrl: String?) {
+        // 広告 View のメイン画像ロード完了時
+        // カスタムインフィード広告では使用されません
+    }
+    override fun onAdImageLoadedFail(imageUrl: String?, errorString: String?) {
+        // 広告 View のメイン画像ロード失敗時
+        // カスタムインフィード広告では使用されません
+    }
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Java"></p>
+
+<pre><code class="language-java">RFPInstreamAdPlacerListener listener = new AdPlacerListener();
+adPlacer.setAdListener(listener);
+
+adPlacer.loadAd();
+</code></pre>
+
+<p></div></p>
+
+<p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">val listener = AdPlacerListener()
+adPlacer.setAdListener(listener)
+
+adPlacer.loadAd()
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<h2 id="広告の表示">広告の表示</h2>
+
+<p>広告パラメータは<code>RFPInstreamAdPlacerListener#onAdsLoaded()</code>によって、<code>RFPInstreamInfoModel</code>の配列として取得できます。
+これをもとにビューを構築します。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Java"></p>
+
+<pre><code class="language-java">@Override
+public void onAdsLoaded(List&lt;? extends RFPInstreamInfoModel&gt; items) {
+    yourContentsItemList.add(0, items.get(0));
+    yourContentsItemList.add(3, items.get(1));
+    yourContentsItemList.add(6, items.get(2));
+}
+</code></pre>
+
+<pre><code class="language-java">class YourAdapter extends RecyclerView.Adapter&lt;RecyclerView.ViewHolder&gt; {
     List&lt;Object&gt; yourContentsItemList;
+
+    RFPInstreamAdPlacer adPlacer;
 
     /**
      * @param yourContentsItemList コンテンツの元となるアイテムのリスト
@@ -597,86 +724,303 @@
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // 広告用のレイアウトはアプリケーション側で作成する必要があります
-        View v = inflater.inflate(R.layout.rfp_ad_view, parent, false);
-        return new AdViewHolder(v, adPlacer);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        if (viewType == VIEW_TYPE_AD) { // 広告
+            View v = inflater.inflate(R.layout.ad_view, parent, false);
+            return new AdViewHolder(v, adPlacer);
+        }
+
+        View v = inflater.inflate(R.layout.content_view, parent, false);
+        return new ContentViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        RFPInstreamInfoModel adInfo = (RFPInstreamInfoModel) yourContentsItemList.get(position);
-        AdViewHolder adHolder = (AdViewHolder) holder;
-        adHolder.setData(adInfo);
+        Object content = yourContentsItemList.get(position);
 
-        // インプレッションを送信する
-        // IABの定義により広告の50%以上表示されている状態が1秒以上
-        // (動画広告では2秒以上)続いた場合にインプレッションを送信する。
-        // ここでは簡略化のためデータ設定時に行っている。
-        // 重複排除などは SDK が行っているため、毎回通信などは発生しない
-        adPlacer.measureImp(adInfo);
+        if (content instanceof RFPInstreamInfoModel) { // 広告
+            RFPInstreamInfoModel adModel = (RFPInstreamInfoModel) content;
+            AdViewHolder adHolder = (AdViewHolder) holder;
+            adHolder.setData(adModel);
+            return;
+        }
 
+        YourContent yourContent = (YourContent) content;
+        ContentViewHolder viewHolder = (ContentViewHolder) holder;
+        viewHolder.setData(yourContent);
+    }
+
+    /**
+     * コンテンツ用ViewHolder
+     */
+    private static class ContentViewHolder extends RecyclerView.ViewHolder {
+        // ... ...
     }
 
     /**
      * 広告用ViewHolder
      */
     private static class AdViewHolder extends RecyclerView.ViewHolder {
-        RFPInstreamAdPlacer adPlacer;
-        RFPInstreamInfoModel adData;
-
-        TextView advertiserName;
-        TextView adText;
-        ImageView adImage;
-        TextView adSponsoredLabel;
-
-        AdViewHolder(View itemView, RFPInstreamAdPlacer placer) {
-            super(itemView);
-
-            adPlacer = placer;
-            itemView.setOnClickListener(this);
-            advertiserName = itemView.findViewById(R.id.advertiser_name);
-            adText = itemView.findViewById(R.id.ad_text);
-            adImage = itemView.findViewById(R.id.ad_image);
-            adSponsoredLabel = itemView.findViewById(R.id.sponsor_name);
-        }
-
-        void setData(RFPInstreamInfoModel data) {
-            adData = data;
-            advertiserName.setText(data.title());
-            adText.setText(data.content());
-
-            String displayedAdvertiser = data.displayedAdvertiser();
-            if (null != displayedAdvertiser &amp;&amp; 0 &lt; displayedAdvertiser.length()) {
-                adSponsoredLabel.setText(displayedAdvertiser);
-            }
-
-            (new ImageLoader(data.creative_url(), adImage)).execute();
-        }
-
-        @Override
-        public void onClick(View view) {
-            // RFPInstreamAdPlacer#sendClickEvent()を呼び出すことにより広告を開きます
-            adPlacer.sendClickEvent(adData);
-        }
+        // ... ...
     }
 }
 </code></pre>
 
-<p><a name="infeed/custom/adid"></a></p>
+<p></div></p>
 
-<h3 id="広告idの取得">広告IDの取得</h3>
+<p><div class="rfp-tab-pane" title="Kotlin"></p>
 
-<p>広告IDをRFPInstreamInfoModel#ad_id()で取得することができます。</p>
-
-<pre><code class="language-java"> static class AdViewHolder {
-     // ... ...
-     void setData(RFPInstreamInfoModel adData) {
-         // ... ...
-         String ad_id = adData.ad_id();
-         // ... ...
-     }
- }
+<pre><code class="language-kotlin">override fun onAdsLoaded(items: MutableList&lt;out RFPInstreamInfoModel&gt;?) {
+    items?.let {
+        yourContentsItemList.add(0, it[0])
+        yourContentsItemList.add(3, it[1])
+        yourContentsItemList.add(6, it[2])
+    }
+}
 </code></pre>
+
+<pre><code class="language-kotlin">class YourAdapter : RecyclerView.Adapter&lt;RecyclerView.ViewHolder&gt;() {
+    private lateinit var yourContentsItemList: List&lt;Any&gt;
+    private lateinit var adPlacer: RFPInstreamAdPlacer
+
+    fun YourAdapter(yourContentsItemList: List&lt;Any&gt;, adPlacer: RFPInstreamAdPlacer) {
+        this.yourContentsItemList = yourContentsItemList
+        this.adPlacer = adPlacer
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        if (viewType == VIEW_TYPE_AD) {
+            val v = inflater.inflate(R.layout.ad_view, parent, false)
+            return AdViewHolder(v, adPlacer)
+        }
+
+        val v = inflater.inflate(R.layout.content_view, parent, false)
+        return ContentViewHolder(v)
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (holder.itemViewType == VIEW_TYPE_AD) {
+            val model = yourContentsItemList[position] as RFPInstreamInfoModel
+            val vh = holder as AdViewHolder
+            vh.setData(model)
+            return;
+        }
+
+        val yourContent = yourContentsItemList[position] as YourContent
+        val vh = holder as ContentViewHolder
+        vh.setData(yourContent)
+    }
+
+    private class ContentViewHolder(itemView: View)
+        : RecyclerView.ViewHolder(itemView) {
+        // ... ...
+    }
+
+    private class AdViewHolder(itemView: View, placer: RFPInstreamAdPlacer)
+        : RecyclerView.ViewHolder(itemView) {
+        // ... ...
+    }
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<p><code>RFPInstreamInfoModel</code>の内容を元にビューを構築します。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Java"></p>
+
+<pre><code class="language-java">private static class AdViewHolder extends RecyclerView.ViewHolder {
+    TextView advertiserName;
+    TextView adText;
+    ImageView adImage;
+    TextView adSponsoredLabel;
+
+    AdViewHolder(View itemView, RFPInstreamAdPlacer placer) {
+        super(itemView);
+
+        advertiserName = itemView.findViewById(R.id.advertiser_name);
+        adText = itemView.findViewById(R.id.ad_text);
+        adImage = itemView.findViewById(R.id.ad_image);
+        adSponsoredLabel = itemView.findViewById(R.id.sponsor_name);
+    }
+
+    void setData(RFPInstreamInfoModel model) {
+        Log.d(&quot;APP&quot;, &quot;Ad ID is &quot; + model.ad_id());
+
+        advertiserName.setText(model.title());
+        adText.setText(model.content());
+        adSponsoredLabel.setText(model.displayedAdvertiser());
+
+        loadImageFromUrl(adImage, model.creative_url());
+    }
+
+    private void loadImageFromUrl(ImageView view, String url) {
+        // ... ...
+    }
+}
+</code></pre>
+
+<p></div></p>
+
+<p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">private class AdViewHolder(itemView: View)
+    : RecyclerView.ViewHolder(itemView) {
+    val advertiserName: TextView = itemView.findViewById(R.id.advertiser_name)
+    val adText: TextView = itemView.findViewById(R.id.ad_text)
+    val adImage: ImageView = itemView.findViewById(R.id.ad_image)
+    val adSponsoredLabel: TextView = itemView.findViewById(R.id.sponsor_name)
+
+    fun setData(model: RFPInstreamInfoModel) {
+        advertiserName.text = model.title()
+        adText.text = model.content()
+        adSponsoredLabel.text = model.displayedAdvertiser()
+        loadImageFromUrl(adImage, model.creative_url())
+    }
+
+    fun loadImageFromUrl(view: ImageView, url: String) {
+        // ... ...
+    }
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<h2 id="広告のイベントの送信">広告のイベントの送信</h2>
+
+<p>カスタムインフィード広告ではイベントを自動で送信しないため、クリックおよびインプレッションの送信を実装する必要があります。</p>
+
+<h3 id="クリックイベントの送信">クリックイベントの送信</h3>
+
+<p>広告枠をクリックが発生した場合、<code>RFPInstreamAdPlacer#sendClickEvent()</code>を呼ぶ必要があります。</p>
+
+<p>このメソッドはイベントの送信と同時にLPへの遷移も行うため、これだけで完結します。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Java"></p>
+
+<pre><code class="language-java">private static class AdViewHolder extends RecyclerView.ViewHolder
+        implements View.OnClickListener {
+    RFPInstreamAdPlacer adPlacer;
+    RFPInstreamInfoModel adModel;
+
+    // ... ...
+
+    AdViewHolder(View itemView, RFPInstreamAdPlacer placer) {
+        // ... ...
+
+        adPlacer = placer;
+        itemView.setOnClickListener(this);
+
+        // ... ...
+    }
+
+    void setData(RFPInstreamInfoModel model) {
+        adModel = model;
+        // ... ...
+    }
+
+    // ... ...
+
+    @Override
+    public void onClick(View view) {
+        // インプレッションの送信とLPへの遷移
+        adPlacer.sendClickEvent(adModel);
+    }
+}
+</code></pre>
+
+<p></div></p>
+
+<p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">private class AdViewHolder(itemView: View, placer: RFPInstreamAdPlacer)
+    : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    var adModel: RFPInstreamInfoModel? = null
+    val adPlacer = placer
+
+    // ... ...
+
+    fun setData(model: RFPInstreamInfoModel) {
+        adModel = model
+        // ... ...
+    }
+
+    // ... ...
+
+    override fun onClick(v: View?) {
+        // インプレッションの送信とLPへの遷移
+        adPlacer.sendClickEvent(model)
+    }
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<h3 id="インプレッションイベントの送信">インプレッションイベントの送信</h3>
+
+<p>広告が視認可能となった時点で<code>RFPInstreamAdPlacer#measureImp()</code>を呼びインプレッションを送信する必要があります。</p>
+
+<pre><code class="language-java">// インプレッションを送信する
+// 重複排除などは SDK が行っているため、毎回通信などは発生しない
+adPlacer.measureImp(adModel);
+</code></pre>
+
+<h4 id="インプレッション送信のタイミングについて">インプレッション送信のタイミングについて</h4>
+
+<p>インプレッション送信のタイミングは広告が表示された時に行う必要がありますが、ユーザーが広告を視認可能にすることを保証するため、本SDKは<strong>アドビューアブルインプレッション</strong>を推奨します。</p>
+
+<p>アドビューアブルインプレッションはインプレッションの条件を満たした上で、以下の条件を満たす必要があります。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">広告種類</th>
+<th align="left">条件</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">静止画</td>
+<td align="left">1. 広告ピクセルの50%以上がビューアブルなスペースに表示される<br>2. 1秒以上連続して上記ピクセルが表示される</td>
+</tr>
+
+<tr>
+<td align="left">動画</td>
+<td align="left">1. 広告ピクセルの50%以上がビューアブルなスペースに表示される<br>2. 2秒以上連続して上記ピクセルが表示される</td>
+</tr>
+</tbody>
+</table>
+
+
+<figure >
+    
+        <img src="../impression.png" />
+    
+    
+    <figcaption>
+        <h4>アドビューアブルインプレッションのイメージ</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>詳しくは<a href="https://www.jiaa.org/dbps_data/_material_/localhost/topics/20170531viewable_measurement_guidance.pdf">JIAA(日本語)</a>、または<a href="https://www.iab.com/wp-content/uploads/2015/06/MRC-Viewable-Ad-Impression-Measurement-Guideline.pdf">IAB/MRC(英語)</a>をご確認ください。</p>
 
 
 <footer class=" footline" >
@@ -766,6 +1110,22 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -900,24 +1260,24 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1541645363"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1540952615"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1540952615"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1541645363"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1541645363"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1540952615" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1540952615"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1541645363" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1541645363"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    
+    <script src="/RFP-Android-SDK/js/tabs.js?1541645363"></script>
 
   </body>
 </html>
