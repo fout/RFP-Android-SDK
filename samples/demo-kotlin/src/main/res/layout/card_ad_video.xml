@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="ad"
+            type="jp.fout.rfp.android.sdk.model.RFPInstreamInfoModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/advertiser_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="@{ad.displayedAdvertiser()}"
+            tools:ignore="RelativeOverlap"
+            tools:text="Advertiser Name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:maxLines="1"
+            android:text="PR"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText,RelativeOverlap" />
+
+        <TextView
+            android:id="@+id/ad_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/advertiser_name"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:textColor="@android:color/black"
+            android:text="@{ad.content()}"
+            tools:text="Ad Content Ad Content Ad Content Ad Content Ad Content Ad Content Ad Content Ad Content Ad Content Ad Content" />
+
+        <jp.fout.rfp.android.sdk.video.VideoAdView
+            android:id="@+id/ad_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ad_text"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            app:adModel="@{ad}" />
+
+        <TextView
+            android:id="@+id/ad_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ad_video"
+            android:layout_alignBottom="@+id/ad_action_button"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="8dp"
+            android:layout_toStartOf="@+id/ad_action_button"
+            android:layout_toLeftOf="@+id/ad_action_button"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:text="@{ad.title()}"
+            tools:text="Ad Text Ad Text Ad Text Ad Text Ad Text" />
+
+        <Button
+            android:id="@+id/ad_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ad_video"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{ad.cta_text()}"
+            tools:text="GO!"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+</layout>

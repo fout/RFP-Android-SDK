@@ -30,6 +30,11 @@ dependencies {
     //implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer27:x.x.x'
     //implementation 'com.google.android.exoplayer:exoplayer-core:2.7.3'
     //implementation 'com.google.android.exoplayer:exoplayer-hls:2.7.3'
+    
+    // // Using exoplayer2.8
+    // implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer28:x.x.x'
+    // implementation 'com.google.android.exoplayer:exoplayer-core:2.8.4'
+    // implementation 'com.google.android.exoplayer:exoplayer-hls:2.8.4'
 
     // if using exoplayer2.4
     //implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer24:x.x.x'

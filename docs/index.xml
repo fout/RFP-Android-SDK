@@ -64,5 +64,23 @@
       <description>HTTPリクエストのタイムアウト間隔設定 HTTPリクエストのタイムアウト間隔の設定 (v3.3.0以上利用可能) setHttpRequestT</description>
     </item>
     
+    <item>
+      <title>Android Architecture Componentsを用いた実装例</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_7/</guid>
+      <description>この項ではAndroid Architecture Componentsを用いた実装例を紹介します。 ViewModel RFPに対応するViewModelを実装します。 ここではRFPI</description>
+    </item>
+    
+    <item>
+      <title>RxJavaを用いた実装例</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_8/</guid>
+      <description>この項ではRxJavaを用いた実装例を紹介します。 SDKの初期化 通常の実装と同じくSDKの初期化を行います。 RFP.init(context, mediaId) Observableの生成 R</description>
+    </item>
+    
   </channel>
 </rss>

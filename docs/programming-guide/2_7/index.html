@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.34" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
+
+    <title>Android Architecture Componentsを用いた実装例 :: RFP-Android-SDK Docs</title>
+    
+    
+    <link href="/RFP-Android-SDK/css/nucleus.css?1547620318" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1547620318" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1547620318" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1547620318" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1547620318" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1547620318" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1547620318" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1547620318" rel="stylesheet">
+    
+      <link href="/RFP-Android-SDK/css/theme-green.css?1547620318" rel="stylesheet">
+    
+
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1547620318"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+      
+  <link href="/RFP-Android-SDK/css/tabs.css?1547620318" rel="stylesheet">
+
+  </head>
+  <body class="" data-url="/RFP-Android-SDK/programming-guide/2_7/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://fout.github.io/RFP-Android-SDK/ja">
+    RFP-Android-SDK Docs
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="検索">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1547620318"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1547620318"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/RFP-Android-SDK\/";
+    
+</script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1547620318"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/quick-start/" title="クイックスタート" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/quick-start/">
+          <b>1. </b>クイックスタート
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/installation-guide/" title="インストールガイド" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/installation-guide/">
+          <b>2. </b>インストールガイド
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/programming-guide/" title="プログラミングガイド" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/programming-guide/">
+          <b>3. </b>プログラミングガイド
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_1/" title="事前準備" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_1/">
+        事前準備
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_2/" title="SDKの初期化" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_2/">
+        SDKの初期化
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_3/" title="簡易版インフィード広告" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_3/">
+        簡易版インフィード広告
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_4/" title="カスタムインフィード広告" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_4/">
+        カスタムインフィード広告
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_5/" title="動画広告への対応" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_5/">
+        動画広告への対応
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_6/" title="HTTPリクエストのタイムアウト間隔設定" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_6/">
+        HTTPリクエストのタイムアウト間隔設定
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_7/" title="Android Architecture Componentsを用いた実装例" class="dd-item active">
+        <a href="/RFP-Android-SDK/programming-guide/2_7/">
+        Android Architecture Componentsを用いた実装例
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_8/" title="RxJavaを用いた実装例" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_8/">
+        RxJavaを用いた実装例
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/faq/" title="FAQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/faq/">
+          <b>4. </b>FAQ
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/RFP-Android-SDK/changelog/" title="CHANGELOG" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/RFP-Android-SDK/changelog/">
+          <b>5. </b>CHANGELOG
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/fout/RFP-Android-SDK"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fa fa-fw fa-language"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="ja" value="/RFP-Android-SDK/programming-guide/2_7/" selected>日本語</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+       
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Docs are generated by using <a href="http://gohugo.io/">Hugo</a>.</p>
+<p>Theme provided by <a href="https://github.com/matcornic/hugo-theme-learn/">hugo-theme-learn</a>.</p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/RFP-Android-SDK/'>TOP</a> > <a href='/RFP-Android-SDK/programming-guide/'>プログラミングガイド</a> > Android Architecture Componentsを用いた実装例
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#viewmodel">ViewModel</a></li>
+<li><a href="#livedata">LiveData</a></li>
+<li><a href="#広告の取得">広告の取得</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Android Architecture Componentsを用いた実装例</h1>
+          
+
+        
+
+
+
+
+<p>この項では<a href="https://developer.android.com/topic/libraries/architecture/">Android Architecture Components</a>を用いた実装例を紹介します。</p>
+
+<h2 id="viewmodel">ViewModel</h2>
+
+<p>RFPに対応するViewModelを実装します。</p>
+
+<p>ここでは<code>RFPInstreamAdPlacer</code>をViewModelのインスタンス変数として保持させています。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">class AdViewModel(
+        context: Context,
+        spotId: String,
+        count: Int,
+        positions: List&lt;Int&gt;?
+) : ViewModel() {
+    private val placer = RFP.createInstreamAdPlacer(context, spotId, count, positions)!!
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<p>ViewModelのコンストラクタに引数が必要となるため、ViewModelFactoryを実装します。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">class AdViewModelFactory(
+        val context: Context,
+        private val spotId: String,
+        private val count: Int,
+        private val positions: List&lt;Int&gt;?
+) : ViewModelProvider.Factory {
+
+    override fun &lt;T : ViewModel?&gt; create(modelClass: Class&lt;T&gt;): T {
+        if (modelClass == AdViewModel::class.java) {
+            @Suppress(&quot;UNCHECKED_CAST&quot;)
+            return AdViewModel(context, spotId, count, positions) as T
+        }
+        throw IllegalArgumentException(&quot;Unknown ViewModel class: ${modelClass.name}&quot;)
+    }
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<p>実装したViewModelFactoryからRFP用のViewModelを取得します。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">class ArticleFragment : Fragment() {
+    private lateinit var adViewModel: AdViewModel
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        // ... ...
+
+        val positions = listOf(1, 5, 9) // Ad Positions
+        val adViewModelFactory = activity?.let {
+            AdViewModelFactory(it, spotId!!, positions.size, positions)
+        }
+        adViewModel = ViewModelProviders.of(this, adViewModelFactory)
+                .get(AdViewModel::class.java)
+
+        // ... ...
+    }
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<p>RFPInstreamAdPlacerが複数必要な場合はSpot IDなどをキーとして使用するとよいでしょう。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">adViewModel = ViewModelProviders.of(this, adViewModelFactory)
+        .get(spotId, AdViewModel::class.java)
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<h2 id="livedata">LiveData</h2>
+
+<p><code>AdViewModel#getAds()</code>でLiveDataを返すように実装します。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">fun getAds(): LiveData&lt;AdResponse&lt;List&lt;RFPInstreamInfoModel&gt;&gt;&gt; {
+    val repository = AdRepository(placer)
+    return repository.getAds()
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<p>広告取得の成否を判断するため <code>AdResponse</code> クラスで広告情報をラップしています。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">enum class AdStatus {
+    SUCCESS,
+    ERROR,
+}
+
+data class AdResponse&lt;out T&gt;(val status: AdStatus, val data: T?, val message: String?) {
+    companion object {
+        fun &lt;T&gt; success(data: T?): AdResponse&lt;T&gt; {
+            return AdResponse(AdStatus.SUCCESS, data, null)
+        }
+
+        fun &lt;T&gt; error(msg: String, data: T?): AdResponse&lt;T&gt; {
+            return AdResponse(AdStatus.ERROR, data, msg)
+        }
+    }
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<p>LiveDataを購読し、結果をUIに反映します。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">override fun onActivityCreated(savedInstanceState: Bundle?) {
+    super.onActivityCreated(savedInstanceState)
+
+    // ... ...
+
+    adViewModel.getAds().observe(this, Observer { response -&gt;
+        response ?: return@Observer
+        if (response.status == AdStatus.ERROR) {
+            // Failed to fetch ads
+            return@Observer
+        }
+        // Update UI
+        val ads = response.data ?: return@Observer
+        // ... ...
+    })
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+<h2 id="広告の取得">広告の取得</h2>
+
+<p>実際の広告取得を行うRepositoryクラスを実装します。</p>
+
+<p>placerにリスナーを設定し、<code>onAdsLoaded()</code>や<code>onAdsLoadedFail()</code>でLiveDataを変更します。</p>
+
+<div class="rfp-code-tabs">
+  <ul class="rfp-nav rfp-nav-tabs"></ul>
+  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
+
+<pre><code class="language-kotlin">class AdRepository(private val placer: RFPInstreamAdPlacer) {
+    fun getAds(): LiveData&lt;AdResponse&lt;List&lt;RFPInstreamInfoModel&gt;&gt;&gt; {
+        val data = MutableLiveData&lt;AdResponse&lt;List&lt;RFPInstreamInfoModel&gt;&gt;&gt;()
+
+        placer.setAdListener(object : RFPInstreamAdPlacerListener {
+            override fun onAdsLoaded(items: MutableList&lt;out RFPInstreamInfoModel&gt;?) {
+                Timber.d(&quot;item.size = %d&quot;, items?.size)
+                val response = AdResponse.success(items)
+                data.postValue(response)
+            }
+
+            override fun onAdsLoadedFail(errorString: String?) {
+                val response = AdResponse.error(errorString ?: &quot;Failed to load ads&quot;, null)
+                data.postValue(response)
+            }
+
+            override fun onAdMainImageLoaded(imageUrl: String?) {
+            }
+
+            override fun onAdImageLoadedFail(imageUrl: String?, errorString: String?) {
+            }
+
+            override fun onAdClicked(redirectUrl: String?) {
+            }
+        })
+        placer.loadAd()
+
+        return data
+    }
+}
+</code></pre>
+
+<p></div></p>
+</div>
+</div>
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/RFP-Android-SDK/programming-guide/2_6/" title="HTTPリクエストのタイムアウト間隔設定"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/RFP-Android-SDK/programming-guide/2_8/" title="RxJavaを用いた実装例" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1547620318"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1547620318"></script>
+
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1547620318" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1547620318"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="/RFP-Android-SDK/js/tabs.js?1547620318"></script>
+
+  </body>
+</html>
+
