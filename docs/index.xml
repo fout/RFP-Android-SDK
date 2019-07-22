@@ -70,7 +70,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_7/</guid>
-      <description>この項ではAndroid Architecture Componentsを用いた実装例を紹介します。 ViewModel RFPに対応するViewModelを実装します。 ここではRFPI</description>
+      <description>この項ではAndroid Architecture Componentsを用いた実装例を紹介します。 ViewModel RFPに対応するViewModelを実装します。 Context が必要となるの</description>
     </item>
     
     <item>
@@ -80,6 +80,15 @@
       
       <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_8/</guid>
       <description>この項ではRxJavaを用いた実装例を紹介します。 SDKの初期化 通常の実装と同じくSDKの初期化を行います。 RFP.init(context, mediaId) Observableの生成 R</description>
+    </item>
+    
+    <item>
+      <title>Viewable Impressionの実装</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_9/</guid>
+      <description>Viewable Impressionとは？ Viewable Impressionとは、ユーザーが広告を視認したことを保証するためのガイドラインです。 ビューアブルインプレッ</description>
     </item>
     
   </channel>

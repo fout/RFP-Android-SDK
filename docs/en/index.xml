@@ -38,7 +38,7 @@ Displaying simple infeed advertising Implement the following using RFPInstreamAd
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_4/</guid>
-      <description>Loading customized infeed advertising Parameters used to display customized infeed advertising Displaying customized infeed advertising Acquisition of advertising ID  When you wish to display in a more flexible way than with simple infeed advertising, it is possible to use a customized infeed advertising function.
+      <description>Loading customized infeed advertising Parameters used to display customized infeed advertising Displaying customized infeed advertising Support for GIF advertising Acquisition of advertising ID  When you wish to display in a more flexible way than with simple infeed advertising, it is possible to use a customized infeed advertising function.
 Be sure to include a description in implementation so that the user recognizes and understands that the implemented advertising location is for an advertisement.</description>
     </item>
     

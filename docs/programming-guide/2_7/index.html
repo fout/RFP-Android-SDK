@@ -2,7 +2,7 @@
 <html lang="ja" class="js csstransforms3d">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.34" />
     <meta name="description" content="">
 
@@ -11,30 +11,30 @@
 <link rel="icon" href="https://fout.github.io/RFP-Android-SDK//images/favicon.png" type="image/x-icon" />
 
     <title>Android Architecture Componentsを用いた実装例 :: RFP-Android-SDK Docs</title>
+
     
+    <link href="/RFP-Android-SDK/css/nucleus.css?1563788003" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1563788003" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1563788003" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1563788003" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1563788003" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1563788003" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1563788003" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1563788003" rel="stylesheet">
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1547620318" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/font-awesome.min.css?1547620318" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1547620318" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1547620318" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1547620318" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1547620318" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1547620318" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1547620318" rel="stylesheet">
-    
-      <link href="/RFP-Android-SDK/css/theme-green.css?1547620318" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1563788003" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1547620318"></script>
-    
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1563788003"></script>
+
     <style type="text/css">
-      :root #header + #content > #left > #rlblock_left{ 
+      :root #header + #content > #left > #rlblock_left{
           display:none !important;
       }
       
     </style>
       
-  <link href="/RFP-Android-SDK/css/tabs.css?1547620318" rel="stylesheet">
+  <link href="/RFP-Android-SDK/css/tabs.css?1563788003" rel="stylesheet">
 
   </head>
   <body class="" data-url="/RFP-Android-SDK/programming-guide/2_7/">
@@ -51,19 +51,19 @@
     </div>
     
         <div class="searchbox">
-    <label for="search-by"><i class="fa fa-search"></i></label>
-    <input data-search-input id="search-by" type="text" placeholder="検索">
-    <span data-search-clear=""><i class="fa fa-close"></i></span>
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="検索">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1547620318"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1547620318"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1563788003"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1563788003"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/RFP-Android-SDK\/";
+        var baseurl = "https:\/\/fout.github.io\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1547620318"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1563788003"></script>
 
     
   </div>
@@ -293,6 +293,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/RFP-Android-SDK/programming-guide/2_9/" title="Viewable Impressionの実装" class="dd-item ">
+        <a href="/RFP-Android-SDK/programming-guide/2_9/">
+        Viewable Impressionの実装
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -369,7 +388,7 @@
       
         <li>
           <a class="padding">
-            <i class="fa fa-fw fa-language"></i>
+            <i class="fas fa-language fa-fw"></i>
           <div class="select-style">
             <select id="select-language" onchange="location = this.value;">
           
@@ -399,7 +418,7 @@
         </div>
         </a>
         </li>
-       
+      
       
       
       </ul>
@@ -428,13 +447,15 @@
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
                         <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                          <i class="fa fa-bars"></i>
+                          <i class="fas fa-bars"></i>
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
                   
                   <span class="links">
+                 
+                 
                     
           
           
@@ -452,7 +473,8 @@
           
          
           
-           
+        
+                 
                   </span>
                 </div>
                 
@@ -493,47 +515,14 @@
 
 <p>RFPに対応するViewModelを実装します。</p>
 
-<p>ここでは<code>RFPInstreamAdPlacer</code>をViewModelのインスタンス変数として保持させています。</p>
+<p><code>Context</code> が必要となるので <code>AndroidViewModel</code> を継承します。</p>
 
 <div class="rfp-code-tabs">
   <ul class="rfp-nav rfp-nav-tabs"></ul>
   <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
 
-<pre><code class="language-kotlin">class AdViewModel(
-        context: Context,
-        spotId: String,
-        count: Int,
-        positions: List&lt;Int&gt;?
-) : ViewModel() {
-    private val placer = RFP.createInstreamAdPlacer(context, spotId, count, positions)!!
-}
-</code></pre>
-
-<p></div></p>
-</div>
-</div>
-
-
-<p>ViewModelのコンストラクタに引数が必要となるため、ViewModelFactoryを実装します。</p>
-
-<div class="rfp-code-tabs">
-  <ul class="rfp-nav rfp-nav-tabs"></ul>
-  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
-
-<pre><code class="language-kotlin">class AdViewModelFactory(
-        val context: Context,
-        private val spotId: String,
-        private val count: Int,
-        private val positions: List&lt;Int&gt;?
-) : ViewModelProvider.Factory {
-
-    override fun &lt;T : ViewModel?&gt; create(modelClass: Class&lt;T&gt;): T {
-        if (modelClass == AdViewModel::class.java) {
-            @Suppress(&quot;UNCHECKED_CAST&quot;)
-            return AdViewModel(context, spotId, count, positions) as T
-        }
-        throw IllegalArgumentException(&quot;Unknown ViewModel class: ${modelClass.name}&quot;)
-    }
+<pre><code class="language-kotlin">class AdViewModel(app: Application) : AndroidViewModel(app) {
+    // ...
 }
 </code></pre>
 
@@ -556,31 +545,12 @@
 
         // ... ...
 
-        val positions = listOf(1, 5, 9) // Ad Positions
-        val adViewModelFactory = activity?.let {
-            AdViewModelFactory(it, spotId!!, positions.size, positions)
-        }
-        adViewModel = ViewModelProviders.of(this, adViewModelFactory)
+        adViewModel = ViewModelProviders.of(this)
                 .get(AdViewModel::class.java)
 
         // ... ...
     }
 }
-</code></pre>
-
-<p></div></p>
-</div>
-</div>
-
-
-<p>RFPInstreamAdPlacerが複数必要な場合はSpot IDなどをキーとして使用するとよいでしょう。</p>
-
-<div class="rfp-code-tabs">
-  <ul class="rfp-nav rfp-nav-tabs"></ul>
-  <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
-
-<pre><code class="language-kotlin">adViewModel = ViewModelProviders.of(this, adViewModelFactory)
-        .get(spotId, AdViewModel::class.java)
 </code></pre>
 
 <p></div></p>
@@ -596,9 +566,10 @@
   <ul class="rfp-nav rfp-nav-tabs"></ul>
   <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
 
-<pre><code class="language-kotlin">fun getAds(): LiveData&lt;AdResponse&lt;List&lt;RFPInstreamInfoModel&gt;&gt;&gt; {
-    val repository = AdRepository(placer)
-    return repository.getAds()
+<pre><code class="language-kotlin">fun getAds(spotId: String, count: Int, positions: List&lt;Int&gt;?)
+        : LiveData&lt;AdResponse&lt;List&lt;RFPInstreamInfoModel&gt;&gt;&gt; {
+    val repository = AdRepository()
+    return repository.getAds(getApplication(), spotId, count, positions)
 }
 </code></pre>
 
@@ -647,7 +618,9 @@ data class AdResponse&lt;out T&gt;(val status: AdStatus, val data: T?, val messa
 
     // ... ...
 
-    adViewModel.getAds().observe(this, Observer { response -&gt;
+    val positions = listOf(1, 5, 9)
+    val count = positions.size
+    adViewModel.getAds(spotId, count, positions).observe(this, Observer { response -&gt;
         response ?: return@Observer
         if (response.status == AdStatus.ERROR) {
             // Failed to fetch ads
@@ -669,38 +642,30 @@ data class AdResponse&lt;out T&gt;(val status: AdStatus, val data: T?, val messa
 
 <p>実際の広告取得を行うRepositoryクラスを実装します。</p>
 
-<p>placerにリスナーを設定し、<code>onAdsLoaded()</code>や<code>onAdsLoadedFail()</code>でLiveDataを変更します。</p>
+<p><code>RFPInstreamAdLoader</code> にリスナーを設定し、<code>onSuccess()</code>や<code>onFailure()</code>でLiveDataを変更します。</p>
 
 <div class="rfp-code-tabs">
   <ul class="rfp-nav rfp-nav-tabs"></ul>
   <div class="rfp-tab-content"><p><div class="rfp-tab-pane" title="Kotlin"></p>
 
-<pre><code class="language-kotlin">class AdRepository(private val placer: RFPInstreamAdPlacer) {
-    fun getAds(): LiveData&lt;AdResponse&lt;List&lt;RFPInstreamInfoModel&gt;&gt;&gt; {
+<pre><code class="language-kotlin">class AdRepository {
+    fun getAds(context: Context, spotId: String, count: Int, positions: List&lt;Int&gt;?)
+            : LiveData&lt;AdResponse&lt;List&lt;RFPInstreamInfoModel&gt;&gt;&gt; {
         val data = MutableLiveData&lt;AdResponse&lt;List&lt;RFPInstreamInfoModel&gt;&gt;&gt;()
 
-        placer.setAdListener(object : RFPInstreamAdPlacerListener {
-            override fun onAdsLoaded(items: MutableList&lt;out RFPInstreamInfoModel&gt;?) {
-                Timber.d(&quot;item.size = %d&quot;, items?.size)
-                val response = AdResponse.success(items)
-                data.postValue(response)
-            }
-
-            override fun onAdsLoadedFail(errorString: String?) {
-                val response = AdResponse.error(errorString ?: &quot;Failed to load ads&quot;, null)
-                data.postValue(response)
-            }
-
-            override fun onAdMainImageLoaded(imageUrl: String?) {
-            }
-
-            override fun onAdImageLoadedFail(imageUrl: String?, errorString: String?) {
-            }
-
-            override fun onAdClicked(redirectUrl: String?) {
-            }
-        })
-        placer.loadAd()
+        val loader = RFPInstreamAdLoader.Builder(spotId)
+                .count(count)
+                .positions(positions)
+                .onSuccess { items -&gt;
+                    val response = AdResponse.success(items)
+                    data.postValue(response)
+                }
+                .onFailure { message -&gt;
+                    val response = AdResponse.error(message, null)
+                    data.postValue(response)
+                }
+                .build()
+        loader.loadAd(context)
 
         return data
     }
@@ -928,6 +893,22 @@ data class AdResponse&lt;out T&gt;(val status: AdStatus, val data: T?, val messa
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -969,12 +950,15 @@ data class AdResponse&lt;out T&gt;(val status: AdStatus, val data: T?, val messa
         
 
 
-        
-            <a class="nav nav-prev" href="/RFP-Android-SDK/programming-guide/2_6/" title="HTTPリクエストのタイムアウト間隔設定"> <i class="fa fa-chevron-left"></i></a>
-        
-        
-            <a class="nav nav-next" href="/RFP-Android-SDK/programming-guide/2_8/" title="RxJavaを用いた実装例" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-        
+	 
+	 
+		
+			<a class="nav nav-prev" href="/RFP-Android-SDK/programming-guide/2_6/" title="HTTPリクエストのタイムアウト間隔設定"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/RFP-Android-SDK/programming-guide/2_8/" title="RxJavaを用いた実装例" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -982,24 +966,24 @@ data class AdResponse&lt;out T&gt;(val status: AdStatus, val data: T?, val messa
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1547620318"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1547620318"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1547620318"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1547620318"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1547620318"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1547620318"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1563788003"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1563788003"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1563788003"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1563788003"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1563788003"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1563788003"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1563788003"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1547620318"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1547620318"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1563788003"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1563788003"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1563788003"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1547620318" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1547620318"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1563788003" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1563788003"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script src="/RFP-Android-SDK/js/tabs.js?1547620318"></script>
+    <script src="/RFP-Android-SDK/js/tabs.js?1563788003"></script>
 
   </body>
 </html>
