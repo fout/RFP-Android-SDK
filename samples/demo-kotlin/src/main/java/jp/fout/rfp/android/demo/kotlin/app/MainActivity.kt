@@ -1,16 +1,28 @@
 package jp.fout.rfp.android.demo.kotlin.app
 
 import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.navigation.Navigation
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.HasSupportFragmentInjector
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.AdParametersViewModel
-import jp.fout.rfp.android.demo.kotlin.app.ui.main.MainFragment
+import jp.fout.rfp.android.demo.kotlin.app.ui.main.MainFragmentArgs
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.PreferencesDialogFragment
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
     companion object {
         private val DEFAULT_AD_PARAMETERS
                 = AdParametersViewModel.AdParameters(2, "NDQ0OjMx")
@@ -24,14 +36,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        adParametersViewModel = ViewModelProviders.of(this)
+        adParametersViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(AdParametersViewModel::class.java)
         adParametersViewModel.parameters.observe(this, Observer { parameters ->
             parameters?.let {
-                val fragment = MainFragment.newInstance()
-                supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
-                        .commitNow()
+                val args = MainFragmentArgs.Builder()
+                        .setAdMediaId(it.mediaId)
+                        .setAdSpotId(it.spotId)
+                        .build()
+                Navigation.findNavController(this@MainActivity, R.id.container)
+                        .navigate(R.id.mainFragment, args.toBundle())
             }
         })
 
@@ -47,8 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        when (id) {
+        when (item.itemId) {
             R.id.menu_item_edit -> {
                 val dialog = PreferencesDialogFragment()
                 dialog.show(supportFragmentManager, "PreferencesDialogFragment")
@@ -56,4 +69,6 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun supportFragmentInjector() = dispatchingAndroidInjector
 }

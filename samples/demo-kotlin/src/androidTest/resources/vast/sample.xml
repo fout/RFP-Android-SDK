@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<VAST version="2.0">
+    <Ad id="1">
+        <InLine>
+            <AdSystem version="1.0">RFP</AdSystem>
+            <AdTitle>Video Ad Title</AdTitle>
+            <Creatives>
+                <Creative AdID="1-001">
+                    <NonLinearAds>
+                        <NonLinear height="180" width="320">
+                            <StaticResource creativeType="video/mp4">
+                                asset:///sample.mp4
+                            </StaticResource>
+                            <NonLinearClickThrough>
+                                about:blank
+                            </NonLinearClickThrough>
+                        </NonLinear>
+                    </NonLinearAds>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>

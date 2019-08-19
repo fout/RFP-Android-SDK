@@ -10,75 +10,24 @@ import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import jp.fout.rfp.android.demo.kotlin.app.R
 import jp.fout.rfp.android.demo.kotlin.app.databinding.CardAdBinding
 import jp.fout.rfp.android.demo.kotlin.app.databinding.CardAdVideoBinding
 import jp.fout.rfp.android.demo.kotlin.app.databinding.CardArticleBinding
-import jp.fout.rfp.android.demo.kotlin.app.util.VisibilityTracker
 import jp.fout.rfp.android.demo.kotlin.app.vo.Article
+import jp.fout.rfp.android.sdk.instream.RFPInstreamAdEvent
 import jp.fout.rfp.android.sdk.model.RFPInstreamInfoModel
-import timber.log.Timber
-import java.util.*
+import jp.fout.rfp.android.sdk.util.RFPVisibilityTracker
 
-class ArticleAdapter(activity: Activity, callback: DiffUtil.ItemCallback<Any>)
-    : ListAdapter<Any, RecyclerView.ViewHolder>(callback) {
+class ArticleAdapter(activity: Activity)
+    : ListAdapter<Any, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
-    companion object {
-        /** 表示とみなすパーセンテージ */
-        const val VISIBLE_REQUIREMENT_PERCENTAGE = 50
-        /** インプレッション発生とみなす時間(ミリ秒) */
-        const val VIEWABLE_REQUIREMENT_MILLIS = 1000L
-    }
+    private val visibilityTracker: RFPVisibilityTracker = RFPVisibilityTracker(activity)
 
     var articles: List<Any> = emptyList()
 
     var ads: MutableList<RFPInstreamInfoModel> = mutableListOf()
-
-    private val tracker = VisibilityTracker(activity).apply {
-        setVisibilityTrackerListener(object : VisibilityTracker.VisibilityTrackerListener {
-            override fun onVisibilityChanged(visibleViews: List<View>, invisibleViews: List<View>) {
-                handleVisibleViews(visibleViews)
-            }
-        })
-    }
-    private val viewPositionMap = WeakHashMap<View, Int>()
-    private val scheduledViewMap = WeakHashMap<View, Timer>()
-
-    private fun handleVisibleViews(visibleViews: List<View>) {
-        // 表示されているViewがImp送信予定になければTimerをセットする
-        for (v in visibleViews) {
-            val viewPosition = viewPositionMap[v]
-            val model = getItem(viewPosition!!) as RFPInstreamInfoModel
-            var timer: Timer? = scheduledViewMap[v]
-            if (timer == null) {
-                // Schedule measure impression
-                timer = Timer()
-                timer.schedule(object : TimerTask() {
-                    override fun run() {
-                        Timber.d("Measure impression: position=%d, title=\"%s\"", model.position(), model.title())
-                        // インプレッションを送信する
-                        // （重複排除などは SDK がやるため、毎回通信などは発生しない）
-                        onAdEventListener?.onShow(model)
-                    }
-                }, VIEWABLE_REQUIREMENT_MILLIS)
-                scheduledViewMap[v] = timer
-            }
-        }
-        // Imp送信予定のViewが非表示になったら送信予定を取り消す
-        scheduledViewMap.filterKeys {
-            !visibleViews.contains(it)
-        }.forEach { (view, timer) ->
-            timer.cancel()
-            scheduledViewMap.remove(view)
-        }
-    }
-
-    fun trackVisibility(view: View, position: Int) {
-        viewPositionMap[view] = position
-        tracker.addView(view, VISIBLE_REQUIREMENT_PERCENTAGE)
-    }
 
     enum class ViewType(val id: Int) {
         ARTICLE(1) {
@@ -107,10 +56,10 @@ class ArticleAdapter(activity: Activity, callback: DiffUtil.ItemCallback<Any>)
                 val ad = item as RFPInstreamInfoModel
                 holder as AdViewHolder
                 holder.itemView.setOnClickListener {
-                    adapter.onAdEventListener?.onClick(ad)
+                    RFPInstreamAdEvent.sendClickEvent(holder.itemView.context, ad)
                 }
                 holder.binding.ad = ad
-                adapter.trackVisibility(holder.itemView, holder.adapterPosition)
+                adapter.visibilityTracker.addView(holder.itemView, ad)
             }
         },
 
@@ -125,10 +74,10 @@ class ArticleAdapter(activity: Activity, callback: DiffUtil.ItemCallback<Any>)
                 holder as AdVideoViewHolder
                 holder.binding.adActionButton.setOnClickListener {
                     holder.binding.adVideo.pause()
-                    adapter.onVideoAdEventListener?.onButtonClick(ad)
+                    RFPInstreamAdEvent.sendClickEvent(holder.itemView.context, ad)
                 }
                 holder.binding.ad = ad
-                adapter.trackVisibility(holder.itemView, holder.adapterPosition)
+                adapter.visibilityTracker.addView(holder.itemView, ad)
             }
         };
 
@@ -159,8 +108,7 @@ class ArticleAdapter(activity: Activity, callback: DiffUtil.ItemCallback<Any>)
     }
 
     override fun getItemViewType(position: Int): Int {
-        val item = getItem(position)
-        return when (item) {
+        return when (val item = getItem(position)) {
             is Article -> {
                 ViewType.ARTICLE.id
             }
@@ -185,17 +133,18 @@ class ArticleAdapter(activity: Activity, callback: DiffUtil.ItemCallback<Any>)
     class AdViewHolder(val binding: CardAdBinding) : RecyclerView.ViewHolder(binding.root)
 
     class AdVideoViewHolder(val binding: CardAdVideoBinding) : RecyclerView.ViewHolder(binding.root)
+}
 
-    interface OnAdEventListener {
-        fun onClick(model: RFPInstreamInfoModel)
-        fun onShow(model: RFPInstreamInfoModel)
+private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Any>() {
+    override fun areItemsTheSame(oldItem: Any, newItem: Any): Boolean = oldItem == newItem
+
+    override fun areContentsTheSame(oldItem: Any, newItem: Any): Boolean {
+        return if (oldItem is Article && newItem is Article) {
+            oldItem.id == newItem.id
+        } else if (oldItem is RFPInstreamInfoModel && newItem is RFPInstreamInfoModel) {
+            oldItem.ad_id() == newItem.ad_id()
+        } else {
+            false
+        }
     }
-
-    var onAdEventListener: OnAdEventListener? = null
-
-    interface OnVideoAdClickListener {
-        fun onButtonClick(model: RFPInstreamInfoModel)
-    }
-
-    var onVideoAdEventListener: OnVideoAdClickListener? = null
 }

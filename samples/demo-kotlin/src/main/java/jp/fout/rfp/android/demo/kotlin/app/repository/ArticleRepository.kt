@@ -7,28 +7,16 @@ import jp.fout.rfp.android.demo.kotlin.app.vo.Article
 import org.jsoup.Jsoup
 import retrofit2.Call
 import retrofit2.Callback
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class ArticleRepository {
-    companion object {
-        const val BASE_URL = "https://backyard.fout.co.jp"
-//        const val BASE_URL = "https://www.fout.co.jp"
-    }
-
-    private val service: WordPressService
-
-    init {
-        val retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-        service = retrofit.create(WordPressService::class.java)
-    }
-
+@Singleton
+class ArticleRepository @Inject constructor(
+        private val service: WordPressService
+) {
     fun getArticles(): LiveData<List<Article>> {
         val data = MutableLiveData<List<Article>>()
 

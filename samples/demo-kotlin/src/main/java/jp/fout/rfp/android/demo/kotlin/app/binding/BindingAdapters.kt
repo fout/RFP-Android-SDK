@@ -19,6 +19,7 @@ fun ImageView.bindImageUrl(url: String) {
     val option = RequestOptions()
             .centerCrop()
             .override(width, height)
+            .placeholder(R.drawable.placeholder)
             .error(R.drawable.icon)
     Glide.with(context)
             .load(url)

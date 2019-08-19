@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="jp.fout.rfp.android.demo.kotlin.app.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment">
+        <argument
+            android:name="adMediaId"
+            app:argType="integer"
+            android:defaultValue="2" />
+        <argument
+            android:name="adSpotId"
+            app:argType="string"
+            android:defaultValue="NDQ0OjMx" />
+    </fragment>
+
+</navigation>
