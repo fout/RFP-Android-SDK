@@ -48,7 +48,7 @@ Be sure to include a description in implementation so that the user recognizes a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fout.github.io/RFP-Android-SDK/en/programming-guide/2_5/</guid>
-      <description>Components provided by an advertising-compatible SDK Registration of VideoAdActivity Video advertising judgments Process video advertising information with VideoAdView Changing the text for the buttons located in video advertising Playing the video Resuming from full-screen mode Playback control when transferring mode Customizing video area tap behavior Support for video advertising loading errors Cache settings  Components provided in the video support SDK VideoAdView: This is the Custom View for video playback and sending tracking events.</description>
+      <description>Components provided by an advertising-compatible SDK Registration of VideoAdActivity Video advertising judgments Process video advertising information with VideoAdView Changing the text for the buttons located in video advertising Playing the video Resuming from full-screen mode Playback control when transferring mode Customizing video area tap behavior Support for video advertising loading errors Cache settings Resuming video when it is reattach to the view  Components provided in the video support SDK VideoAdView: This is the Custom View for video playback and sending tracking events.</description>
     </item>
     
     <item>

@@ -3,10 +3,11 @@
   <groupId>jp.fout.rfp.android.sdk</groupId>
   <artifactId>rfp-video-sdk-exoplayer29</artifactId>
   <versioning>
-    <release>3.5.0</release>
+    <release>3.6.0</release>
     <versions>
       <version>3.5.0</version>
+      <version>3.6.0</version>
     </versions>
-    <lastUpdated>20190819034510</lastUpdated>
+    <lastUpdated>20190827015135</lastUpdated>
   </versioning>
 </metadata>

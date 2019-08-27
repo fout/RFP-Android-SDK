@@ -13,19 +13,19 @@
     <title>動画広告への対応 :: RFP-Android-SDK Docs</title>
 
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1566186083" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1566186083" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1566186083" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1566186083" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1566186083" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1566186083" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1566186083" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1566186083" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1566870652" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1566870652" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1566870652" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1566870652" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1566870652" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1566870652" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1566870652" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1566870652" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1566186083" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1566870652" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1566186083"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1566870652"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -34,7 +34,7 @@
       
     </style>
       
-  <link href="/RFP-Android-SDK/css/tabs.css?1566186083" rel="stylesheet">
+  <link href="/RFP-Android-SDK/css/tabs.css?1566870652" rel="stylesheet">
 
   </head>
   <body class="" data-url="/RFP-Android-SDK/programming-guide/2_5/">
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1566186083"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1566186083"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1566870652"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1566870652"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fout.github.io\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1566186083"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1566870652"></script>
 
     
   </div>
@@ -513,6 +513,7 @@
 <li><a href="#フルスクリーンの場合">フルスクリーンの場合</a></li>
 </ul></li>
 <li><a href="#キャッシュの設定">キャッシュの設定</a></li>
+<li><a href="#動画が画面内に移動した時の再開">動画が画面内に移動した時の再開</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -548,6 +549,7 @@
 <li><a href="#infeed/video/customizing-video-area-tap">全画面モード移行の抑制</a></li>
 <li><a href="#infeed/video/error-handling">動画広告読み込みエラーへの対応</a></li>
 <li><a href="#infeed/video/using-cache">キャッシュの設定</a></li>
+<li><a href="#infeed/video/resume">動画が画面内に移動した時の再開</a></li>
 </ul>
 
 <p><a name="infeed/video/feature"></a></p>
@@ -858,6 +860,54 @@ RFP.setVideoCacheSize(50); // 50MBをキャッシュ領域として使用する
 RFP.setVideoCacheSize(0);  // キャッシュを無効にする
 </code></pre>
 
+<p><a name="infeed/video/resume"></a></p>
+
+<h3 id="動画が画面内に移動した時の再開">動画が画面内に移動した時の再開</h3>
+
+<p>動画SDKではウィンドウからデタッチされた動画の再生状態を保持していませんので、再びアタッチされた際に動画が初期状態から再生されます。
+この挙動はデフォルトの動作ですが、再びウィンドウ内にアタッチされた際に対象動画を元の再生位置から開始させたい場合は追加の実装が必要となります。</p>
+
+<p><code>VideoAdView</code>が画面外に移動時に<code>VideoAdView#OnDetachedListener</code>を呼び出しているのでこれを実装します。引数として対象となる<code>VideoAdView</code>の引き継ぎ情報の入ったBundleが渡されるのでこれを格納してください。</p>
+
+<p>対象動画が画面内に移動されたら、先ほど格納したBundleを
+<code>VideoAdView#processAd(RFPInstreamInfoModel adModel, @Nullable Bundle savedState)</code>に渡して再生状態を引き継ぐことができます。</p>
+
+<pre><code class="language-java">// store ad's information for resume
+private SparseArray&lt;Bundle&gt; mResumeVideosArray = new SparseArray&lt;&gt;();
+
+public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    if (holder.getItemViewType() == ITEM_VIEW_TYPE_AD_VIDEO) {
+        final VideoAdViewHolder h = (VideoAdViewHolder) holder;
+        final RFPInstreamInfoModel model = (RFPInstreamInfoModel) mModels.get(position);
+
+        // get resume ad's information if exist
+        Bundle state = mResumeVideosArray.get(position);
+        // remove ad's old information if exist
+        mResumeVideosArray.remove(position);
+        // reset ad's information when it's detached from window
+        h.adVideoView.setOnDetachedListener(bundle -&gt; mResumeVideosArray.put(position, bundle));
+        h.setData(adInfo, null, state);
+    } else {
+        // ... ...
+    }
+}
+
+static class AdViewHolder {
+    VideoAdView adVideo;
+    // ... ...
+
+    AdViewHolder(View convertView) {
+        adVideo = (VideoAdView) itemView.findViewById(R.id.custom_instream_ad_image);
+        // ... ...
+    }
+
+    void setData(RFPInstreamInfoModel adData, Bundle savedState) {
+        // ... ...
+        // restart ad from the position when being detached
+        adVideo.processAd(adData, savedState);
+    }
+</code></pre>
+
 
 <footer class=" footline" >
 	
@@ -1147,24 +1197,24 @@ RFP.setVideoCacheSize(0);  // キャッシュを無効にする
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1566186083"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1566186083"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1566186083"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1566186083"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1566186083"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1566186083"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1566186083"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1566870652"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1566870652"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1566870652"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1566870652"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1566870652"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1566870652"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1566870652"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1566186083"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1566186083"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1566186083"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1566870652"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1566870652"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1566870652"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1566186083" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1566186083"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1566870652" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1566870652"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script src="/RFP-Android-SDK/js/tabs.js?1566186083"></script>
+    <script src="/RFP-Android-SDK/js/tabs.js?1566870652"></script>
 
   </body>
 </html>
