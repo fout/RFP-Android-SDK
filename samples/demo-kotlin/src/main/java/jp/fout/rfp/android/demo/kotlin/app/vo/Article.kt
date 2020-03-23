@@ -4,7 +4,7 @@ import java.util.*
 
 data class Article(
         val id: Int,
-        val date: Date,
+        val date: Date?,
         val link: String,
         val title: String,
         val excerpt: String,

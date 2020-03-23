@@ -33,6 +33,7 @@ proguard/
 /.idea/misc.xml
 /.idea/gradle.xml
 /.idea/modules.xml
+/.idea/navEditor.xml
 /.idea/dictionaries/
 /.idea/codeStyles/*
 /.idea/caches/*

@@ -3,8 +3,8 @@ repositories {
 }
 dependencies {
     implementation 'com.google.android.gms:play-services-base:11.8.0'
-    implementation 'com.google.android.exoplayer:exoplayer-core:r2.5.4'
-    implementation 'com.google.android.exoplayer:exoplayer-hls:r2.5.4'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.11.3'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.11.3'
     implementation "jp.fout.rfp.android.sdk:rfp-sdk:latest.release"
-    implementation "jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer25:latest.release"
+    implementation "jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer211:latest.release"
 }
