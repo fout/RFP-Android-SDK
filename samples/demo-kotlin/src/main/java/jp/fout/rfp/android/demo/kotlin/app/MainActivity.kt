@@ -9,11 +9,14 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.AdParametersViewModel
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.MainFragmentArgs
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.PreferencesDialogFragment
+import kotlinx.android.synthetic.main.main_activity.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
@@ -36,6 +39,9 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
+        val navController = findNavController(R.id.container)
+        setupWithNavController(bottomNavigationView, navController)
+
         adParametersViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(AdParametersViewModel::class.java)
         adParametersViewModel.parameters.observe(this, Observer { parameters ->
@@ -45,7 +51,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                         .setAdSpotId(it.spotId)
                         .build()
                 Navigation.findNavController(this@MainActivity, R.id.container)
-                        .navigate(R.id.mainFragment, args.toBundle())
+                        .navigate(R.id.nav_item_instream, args.toBundle())
             }
         })
 

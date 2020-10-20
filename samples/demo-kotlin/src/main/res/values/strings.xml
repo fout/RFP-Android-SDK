@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RFP Demo Kotlin</string>
+    <string name="nav_item_instream">Instream</string>
+    <string name="nav_item_outstream">Outstream</string>
 </resources>

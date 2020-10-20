@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/nav_item_instream">
 
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/nav_item_instream"
         android:name="jp.fout.rfp.android.demo.kotlin.app.ui.main.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment">
@@ -18,6 +18,21 @@
             android:name="adSpotId"
             app:argType="string"
             android:defaultValue="NDQ0OjMx" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_item_outstream"
+        android:name="jp.fout.rfp.android.demo.kotlin.app.ui.outstream.OutstreamFragment"
+        android:label="outstream_fragment"
+        tools:layout="@layout/fragment_outstream">
+        <argument
+            android:name="adMediaId"
+            app:argType="integer"
+            android:defaultValue="4114" />
+        <argument
+            android:name="adSpotId"
+            app:argType="string"
+            android:defaultValue="NzI1OjEyNjAw" />
     </fragment>
 
 </navigation>

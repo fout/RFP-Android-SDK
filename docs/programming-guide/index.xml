@@ -91,5 +91,14 @@
       <description>Viewable Impressionとは？ Viewable Impressionとは、ユーザーが広告を視認したことを保証するためのガイドラインです。 ビューアブルインプレッ</description>
     </item>
     
+    <item>
+      <title>アウトストリーム動画広告</title>
+      <link>https://fout.github.io/RFP-Android-SDK/programming-guide/2_10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fout.github.io/RFP-Android-SDK/programming-guide/2_10/</guid>
+      <description>この機能を使用するにはv3.8.0以降のSDKが必要です アウトストリーム動画広告の配信 本SDKを用いてアウトストリーム動画広告の配信を行うこ</description>
+    </item>
+    
   </channel>
 </rss>

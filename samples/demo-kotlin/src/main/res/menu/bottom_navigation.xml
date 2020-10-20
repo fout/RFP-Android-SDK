@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_item_instream"
+        android:icon="@drawable/ic_instream"
+        android:title="@string/nav_item_instream" />
+    <item
+        android:id="@+id/nav_item_outstream"
+        android:icon="@drawable/ic_outstream"
+        android:title="@string/nav_item_outstream" />
+</menu>
