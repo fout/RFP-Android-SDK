@@ -1,18 +1,19 @@
 package jp.fout.rfp.android.demo.kotlin.app
 
-import android.app.Activity
 import android.app.Application
 import android.os.Build
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.squareup.leakcanary.LeakCanary
+import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.android.HasAndroidInjector
 import jp.fout.rfp.android.demo.kotlin.app.di.AppInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class DemoKotlinApp : Application(), HasActivityInjector {
+class DemoKotlinApp : Application(), HasAndroidInjector {
     @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
         super.onCreate()
@@ -22,6 +23,8 @@ class DemoKotlinApp : Application(), HasActivityInjector {
             LeakCanary.install(this)
         }
 
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
+
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
@@ -29,5 +32,5 @@ class DemoKotlinApp : Application(), HasActivityInjector {
         AppInjector.init(this)
     }
 
-    override fun activityInjector() = dispatchingAndroidInjector
+    override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
 }

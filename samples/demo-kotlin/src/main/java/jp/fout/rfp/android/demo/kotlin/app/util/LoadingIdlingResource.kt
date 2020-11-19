@@ -1,6 +1,6 @@
 package jp.fout.rfp.android.demo.kotlin.app.util
 
-import android.support.test.espresso.IdlingResource
+import androidx.test.espresso.IdlingResource
 
 class LoadingIdlingResource : IdlingResource {
     private var _idle: Boolean = false

@@ -1,6 +1,6 @@
 package jp.fout.rfp.android.demo.kotlin.app.util
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 
 class AbsentLiveData<T : Any?> private constructor(): LiveData<T>() {
     init {

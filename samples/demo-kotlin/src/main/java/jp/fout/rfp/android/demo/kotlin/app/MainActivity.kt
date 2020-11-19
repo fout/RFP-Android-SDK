@@ -1,27 +1,25 @@
 package jp.fout.rfp.android.demo.kotlin.app
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
+import dagger.android.HasAndroidInjector
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.AdParametersViewModel
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.MainFragmentArgs
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.PreferencesDialogFragment
 import kotlinx.android.synthetic.main.main_activity.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
+class MainActivity : AppCompatActivity(), HasAndroidInjector {
     @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -42,9 +40,9 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         val navController = findNavController(R.id.container)
         setupWithNavController(bottomNavigationView, navController)
 
-        adParametersViewModel = ViewModelProviders.of(this, viewModelFactory)
+        adParametersViewModel = ViewModelProvider(this, viewModelFactory)
                 .get(AdParametersViewModel::class.java)
-        adParametersViewModel.parameters.observe(this, Observer { parameters ->
+        adParametersViewModel.parameters.observe(this, { parameters ->
             parameters?.let {
                 val args = MainFragmentArgs.Builder()
                         .setAdMediaId(it.mediaId)
@@ -76,5 +74,5 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun supportFragmentInjector() = dispatchingAndroidInjector
+    override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
 }

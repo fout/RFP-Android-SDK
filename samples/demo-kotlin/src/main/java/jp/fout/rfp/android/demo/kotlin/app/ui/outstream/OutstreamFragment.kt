@@ -1,19 +1,17 @@
 package jp.fout.rfp.android.demo.kotlin.app.ui.outstream
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.support.annotation.VisibleForTesting
-import android.support.v4.app.Fragment
+import androidx.annotation.VisibleForTesting
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import jp.fout.rfp.android.demo.kotlin.app.R
 import jp.fout.rfp.android.demo.kotlin.app.di.Injectable
 import jp.fout.rfp.android.demo.kotlin.app.testing.OpenForTesting
-import jp.fout.rfp.android.demo.kotlin.app.ui.main.MainFragmentArgs
 import jp.fout.rfp.android.demo.kotlin.app.util.LoadingIdlingResource
 import jp.fout.rfp.android.demo.kotlin.app.vo.AdResponse
 import jp.fout.rfp.android.demo.kotlin.app.vo.AdStatus
@@ -50,7 +48,7 @@ class OutstreamFragment : Fragment(), Injectable {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel = ViewModelProviders.of(this, viewModelFactory)
+        viewModel = ViewModelProvider(this, viewModelFactory)
                 .get(OutstreamViewModel::class.java)
 
         initializeAds()
@@ -70,7 +68,7 @@ class OutstreamFragment : Fragment(), Injectable {
     }
 
     private fun observeAdViewModel(data: LiveData<AdResponse<String>>) {
-        data.observe(this, Observer { response ->
+        data.observe(viewLifecycleOwner, Observer { response ->
             Timber.d("Ads loaded")
             response ?: return@Observer
             if (response.status == AdStatus.ERROR) {

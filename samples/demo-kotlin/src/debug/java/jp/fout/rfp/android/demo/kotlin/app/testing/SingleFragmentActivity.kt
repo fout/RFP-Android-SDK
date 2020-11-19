@@ -1,8 +1,8 @@
 package jp.fout.rfp.android.demo.kotlin.app.testing
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import jp.fout.rfp.android.demo.kotlin.app.R

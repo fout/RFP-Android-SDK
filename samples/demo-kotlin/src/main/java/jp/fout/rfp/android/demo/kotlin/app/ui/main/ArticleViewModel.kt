@@ -1,10 +1,10 @@
 package jp.fout.rfp.android.demo.kotlin.app.ui.main
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.Transformations
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import jp.fout.rfp.android.demo.kotlin.app.repository.AdRepository
 import jp.fout.rfp.android.demo.kotlin.app.repository.ArticleRepository
 import jp.fout.rfp.android.demo.kotlin.app.testing.OpenForTesting

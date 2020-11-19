@@ -1,7 +1,7 @@
 package jp.fout.rfp.android.demo.kotlin.app.repository
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import android.content.Context
 import jp.fout.rfp.android.demo.kotlin.app.vo.AdResponse
 import jp.fout.rfp.android.sdk.instream.RFPInstreamAdLoader

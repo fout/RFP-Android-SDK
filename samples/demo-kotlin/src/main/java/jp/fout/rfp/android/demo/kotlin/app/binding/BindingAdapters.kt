@@ -1,6 +1,6 @@
 package jp.fout.rfp.android.demo.kotlin.app.binding
 
-import android.databinding.BindingAdapter
+import androidx.databinding.BindingAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide

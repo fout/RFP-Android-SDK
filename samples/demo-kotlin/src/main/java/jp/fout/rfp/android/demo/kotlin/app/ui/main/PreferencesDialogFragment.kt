@@ -1,12 +1,11 @@
 package jp.fout.rfp.android.demo.kotlin.app.ui.main
 
 import android.app.Dialog
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.support.design.widget.TextInputEditText
-import android.support.v4.app.DialogFragment
-import android.support.v7.app.AlertDialog
+import com.google.android.material.textfield.TextInputEditText
+import androidx.fragment.app.DialogFragment
+import androidx.appcompat.app.AlertDialog
 import android.view.View
 import jp.fout.rfp.android.demo.kotlin.app.R
 import jp.fout.rfp.android.demo.kotlin.app.di.Injectable
@@ -17,7 +16,7 @@ class PreferencesDialogFragment : DialogFragment(), Injectable {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val viewModel = ViewModelProviders.of(requireActivity(), viewModelFactory)
+        val viewModel = ViewModelProvider(requireActivity(), viewModelFactory)
                 .get(AdParametersViewModel::class.java)
 
         val view = View.inflate(context, R.layout.fragment_preferences_dialog, null)
