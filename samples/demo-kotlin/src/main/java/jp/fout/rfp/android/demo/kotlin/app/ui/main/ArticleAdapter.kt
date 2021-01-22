@@ -23,7 +23,7 @@ import jp.fout.rfp.android.sdk.util.RFPVisibilityTracker
 class ArticleAdapter(activity: Activity)
     : ListAdapter<Any, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
-    private val visibilityTracker: RFPVisibilityTracker = RFPVisibilityTracker(activity)
+    private var visibilityTracker: RFPVisibilityTracker? = RFPVisibilityTracker(activity)
 
     var articles: List<Any> = emptyList()
 
@@ -59,7 +59,7 @@ class ArticleAdapter(activity: Activity)
                     RFPInstreamAdEvent.sendClickEvent(holder.itemView.context, ad)
                 }
                 holder.binding.ad = ad
-                adapter.visibilityTracker.addView(holder.itemView, ad)
+                adapter.visibilityTracker?.addView(holder.itemView, ad)
             }
         },
 
@@ -77,7 +77,7 @@ class ArticleAdapter(activity: Activity)
                     RFPInstreamAdEvent.sendClickEvent(holder.itemView.context, ad)
                 }
                 holder.binding.ad = ad
-                adapter.visibilityTracker.addView(holder.itemView, ad)
+                adapter.visibilityTracker?.addView(holder.itemView, ad)
             }
         };
 
@@ -105,6 +105,11 @@ class ArticleAdapter(activity: Activity)
 
         abstract fun createViewHolder(inflater: LayoutInflater, parent: ViewGroup?): RecyclerView.ViewHolder
         abstract fun bindViewHolder(holder: RecyclerView.ViewHolder, item: Any, adapter: ArticleAdapter)
+    }
+
+    fun detach() {
+        visibilityTracker?.detach()
+        visibilityTracker = null
     }
 
     override fun getItemViewType(position: Int): Int {

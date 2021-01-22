@@ -1,9 +1,8 @@
 package jp.fout.rfp.android.demo.kotlin.app
 
 import android.app.Application
-import android.os.Build
+import com.google.firebase.FirebaseApp
 import com.google.firebase.crashlytics.FirebaseCrashlytics
-import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -18,11 +17,7 @@ class DemoKotlinApp : Application(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
 
-        // see https://github.com/square/leakcanary/issues/1081
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            LeakCanary.install(this)
-        }
-
+        FirebaseApp.initializeApp(this)
         FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
 
         if (BuildConfig.DEBUG) {

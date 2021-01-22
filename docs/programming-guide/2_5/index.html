@@ -13,19 +13,19 @@
     <title>動画広告への対応 :: RFP-Android-SDK Docs</title>
 
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1605760001" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1605760001" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1605760001" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1605760001" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1605760001" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1605760001" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1605760001" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1605760001" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1611290143" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1611290143" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1611290143" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1611290143" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1611290143" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1611290143" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1611290143" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1611290143" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1605760001" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1611290143" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1605760001"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1611290143"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -34,7 +34,7 @@
       
     </style>
       
-  <link href="/RFP-Android-SDK/css/tabs.css?1605760001" rel="stylesheet">
+  <link href="/RFP-Android-SDK/css/tabs.css?1611290143" rel="stylesheet">
 
   </head>
   <body class="" data-url="/RFP-Android-SDK/programming-guide/2_5/">
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1605760001"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1605760001"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1611290143"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1611290143"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fout.github.io\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1605760001"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1611290143"></script>
 
     
   </div>
@@ -683,6 +683,58 @@ private boolean isVideoAd(int position) {
 
 <p><code>VideoAdView#setAutoStart(false)</code>とすることで自動再生を抑制することができます。この場合、<code>VideoAdView#play()</code>をアプリから呼び出し再生を開始する必要があります。また、<code>VideoAdView#pause()</code>を呼び出すことにより任意の地点で停止することができます。</p>
 
+<p>この場合、動画の再生・停止のタイミングはアプリケーション開発者に任せられますが、ディスプレイ枠などである程度動画の再生・停止を自動化したい場合のため、 <code>RFPInViewNotifier</code> というユーティリティクラスを用意してあります。</p>
+
+<p>実装手順は以下のようになります:</p>
+
+<ol>
+<li>自動再生抑止のため <code>VideoAdView#setAutoStart(false)</code> を呼ぶ</li>
+<li><code>RFPInViewNotifier</code> のインスタンスを生成する。
+<code>RFPInViewNotifier.OnVisibilityChangedListener</code> を実装し、 <code>onVisible()</code> で <code>VideoAdView#play()</code> 、 <code>onInVisible()</code> で <code>VideoAdView#pause()</code> を呼ぶ。</li>
+<li><code>RFPInViewNotifier#addView(View)</code> で広告枠を監視下に入れる。</li>
+<li>ライフサイクル終了時に <code>RFPInViewNotifier#detach()</code> を呼ぶ。</li>
+</ol>
+
+<p>以下に実装例を示します:</p>
+
+<pre><code class="language-kotlin">private lateinit var adVideoView: VideoAdView
+private lateinit var inViewNotifier: RFPInViewNotifier
+
+override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                          savedInstanceState: Bundle?): View? {
+    val view = inflater.inflate(R.layout.fragment_outstream, container, false)
+
+    adVideoView = view.findViewById(R.id.ad_video)
+    adVideoView.setAutoStart(false) // 1
+
+    // 2
+    inViewNotifier = RFPInViewNotifier(requireActivity(), object : RFPInViewNotifier.OnVisibilityChangedListener {
+        override fun onVisible(v: View?) {
+            (v as? VideoAdView)?.play()
+        }
+
+        override fun onInvisible(v: View?) {
+            (v as? VideoAdView)?.pause()
+        }
+    })
+
+    // 3.
+    inViewNotifier.addView(adVideoView)
+
+    // ... ...
+
+    return view
+}
+
+override fun onDestroyView() {
+    super.onDestroyView()
+
+    inViewNotifier.detach() // 4
+
+    // ... ...
+}
+</code></pre>
+
 <p><a name="infeed/video/resume-fullscreen"></a></p>
 
 <h3 id="全画面モードへの移行">全画面モードへの移行</h3>
@@ -1232,24 +1284,24 @@ static class AdViewHolder {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1605760001"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1605760001"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1605760001"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1605760001"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1605760001"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1605760001"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1605760001"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1611290143"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1605760001"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1605760001"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1605760001"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1611290143"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1605760001" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1605760001"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1611290143" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1611290143"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script src="/RFP-Android-SDK/js/tabs.js?1605760001"></script>
+    <script src="/RFP-Android-SDK/js/tabs.js?1611290143"></script>
 
   </body>
 </html>

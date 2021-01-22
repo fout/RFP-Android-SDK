@@ -8,13 +8,13 @@ import android.view.MenuItem
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.AdParametersViewModel
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.MainFragmentArgs
 import jp.fout.rfp.android.demo.kotlin.app.ui.main.PreferencesDialogFragment
-import kotlinx.android.synthetic.main.main_activity.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasAndroidInjector {
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController = findNavController(R.id.container)
         setupWithNavController(bottomNavigationView, navController)
 

@@ -16,6 +16,8 @@ import jp.fout.rfp.android.demo.kotlin.app.util.LoadingIdlingResource
 import jp.fout.rfp.android.demo.kotlin.app.vo.AdResponse
 import jp.fout.rfp.android.demo.kotlin.app.vo.AdStatus
 import jp.fout.rfp.android.sdk.RFP
+import jp.fout.rfp.android.sdk.util.RFPInViewNotifier
+import jp.fout.rfp.android.sdk.util.RFPInViewNotifier.OnVisibilityChangedListener
 import jp.fout.rfp.android.sdk.video.VideoAdView
 import timber.log.Timber
 import java.lang.AssertionError
@@ -31,18 +33,37 @@ class OutstreamFragment : Fragment(), Injectable {
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     val idlingResource: LoadingIdlingResource = LoadingIdlingResource()
 
+    private lateinit var inViewNotifier: RFPInViewNotifier
     private lateinit var adVideoView: VideoAdView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_outstream, container, false)
 
+        inViewNotifier = RFPInViewNotifier(requireActivity(), object : OnVisibilityChangedListener {
+            override fun onVisible(v: View?) {
+                Timber.d("onVisible")
+                (v as? VideoAdView)?.play()
+            }
+
+            override fun onInvisible(v: View?) {
+                Timber.d("onInvisible")
+                (v as? VideoAdView)?.pause()
+            }
+        })
         adVideoView = view.findViewById(R.id.ad_video)
+        adVideoView.setAutoStart(false)
         adVideoView.setOnErrorListener { _, message, t ->
             Timber.d(t, "Video Ad View Error: $message")
         }
+        inViewNotifier.addView(adVideoView)
 
         return view
+    }
+
+    override fun onDestroyView() {
+        inViewNotifier.detach()
+        super.onDestroyView()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

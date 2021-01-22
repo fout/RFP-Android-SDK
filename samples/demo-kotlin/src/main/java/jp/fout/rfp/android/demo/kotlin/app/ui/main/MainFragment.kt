@@ -30,7 +30,7 @@ class MainFragment : Fragment(), Injectable {
 
     private lateinit var viewModel: ArticleViewModel
 
-    private lateinit var viewAdapter: ArticleAdapter
+    private var viewAdapter: ArticleAdapter? = null
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     val idlingResource: LoadingIdlingResource = LoadingIdlingResource()
@@ -54,6 +54,12 @@ class MainFragment : Fragment(), Injectable {
         return view
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        viewAdapter?.detach()
+        viewAdapter = null
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -68,7 +74,7 @@ class MainFragment : Fragment(), Injectable {
         viewModel.articles.observe(viewLifecycleOwner, { articles ->
             Timber.d("Articles loaded")
             articles?.let {
-                viewAdapter.articles = articles
+                viewAdapter?.articles = articles
                 updateArticleView()
             }
         })
@@ -99,11 +105,11 @@ class MainFragment : Fragment(), Injectable {
             val ads = response.data ?: return@Observer
             ads.forEach { ad ->
                 Timber.d("ad position=%d, title=\"%s\"", ad.position(), ad.title())
-                viewAdapter.ads.add(ad)
+                viewAdapter?.ads?.add(ad)
             }
             Timber.d("articles.size=%d, ads.size=%d",
-                    viewAdapter.articles.size, viewAdapter.ads.size)
-            if (!viewAdapter.ads.isNullOrEmpty() && viewAdapter.articles.isNotEmpty()) {
+                    viewAdapter?.articles?.size, viewAdapter?.ads?.size)
+            if (!viewAdapter?.ads.isNullOrEmpty() && viewAdapter?.articles?.isNotEmpty() == true) {
                 Timber.d("refresh with loaded ads")
                 updateArticleView()
             }
@@ -112,11 +118,13 @@ class MainFragment : Fragment(), Injectable {
 
     private fun updateArticleView() {
         val newItems = mutableListOf<Any>()
-        newItems.addAll(viewAdapter.articles)
-        viewAdapter.ads.forEach { ad ->
+        viewAdapter?.articles?.let {
+            newItems.addAll(it)
+        }
+        viewAdapter?.ads?.forEach { ad ->
             newItems.add(ad.position(), ad)
         }
-        viewAdapter.submitList(newItems)
+        viewAdapter?.submitList(newItems)
         idlingResource.idle = true
     }
 }

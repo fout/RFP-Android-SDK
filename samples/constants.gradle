@@ -1,16 +1,16 @@
 project.ext {
-    versionCode = 32
-    versionName = '3.8.1'
+    versionCode = 33
+    versionName = '3.8.2'
 
     minSdkVersion = 16
-    compileSdkVersion = 28
-    targetSdkVersion = 28
+    compileSdkVersion = 30
+    targetSdkVersion = 30
     junitVersion = '4.13.1'
     mockitoVersion = '3.6.0'
     powermockVersion = '2.0.9'
     robolectricVersion = '4.4'
 
-    demoVersionCode = 41
+    demoVersionCode = 42
     demoVersionName = versionName
     demoMinSdkVersion = 18
     demoTargetSdkVersion = 29
