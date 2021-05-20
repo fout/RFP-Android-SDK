@@ -11,7 +11,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.4'
@@ -41,8 +41,6 @@ android {
 
         multiDexEnabled true
 
-        missingDimensionStrategy 'exoplayer', 'exoplayer211'
-
         testInstrumentationRunner "jp.fout.rfp.android.demo.kotlin.app.util.DemoKotlinTestRunner"
     }
 
@@ -60,21 +58,25 @@ android {
         }
     }
 
-    flavorDimensions "javaVersion"
+    flavorDimensions "javaVersion", "exoplayer"
+    def exoplayerDimensions = [
+            'exoplayer214', 'exoplayer213', 'exoplayer212', 'exoplayer211', 'exoplayer210', 'exoplayer29'
+    ]
     productFlavors {
         java7 {
             dimension "javaVersion"
             compileOptions {
                 targetCompatibility JavaVersion.VERSION_1_7
             }
-            missingDimensionStrategy 'exoplayer', 'exoplayer28', 'exoplayer27', 'exoplayer26'
         }
         java8 {
             dimension "javaVersion"
             compileOptions {
                 targetCompatibility JavaVersion.VERSION_1_8
             }
-            missingDimensionStrategy 'exoplayer', 'exoplayer211', 'exoplayer210', 'exoplayer29'
+        }
+        exoplayerDimensions.each { name ->
+            "$name" { dimension "exoplayer" }
         }
     }
 

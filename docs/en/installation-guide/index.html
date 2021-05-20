@@ -13,19 +13,19 @@
     <title>Installation Guide :: RFP-Android-SDK Docs</title>
 
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1611290143" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1611290143" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1611290143" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1611290143" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1611290143" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1611290143" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1611290143" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1611290143" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1621488361" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1621488361" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1621488361" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1621488361" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1621488361" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1621488361" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1621488361" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1621488361" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1611290143" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1621488361" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1621488361"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -34,7 +34,7 @@
       
     </style>
       
-  <link href="/RFP-Android-SDK/css/tabs.css?1611290143" rel="stylesheet">
+  <link href="/RFP-Android-SDK/css/tabs.css?1621488361" rel="stylesheet">
 
   </head>
   <body class="" data-url="/RFP-Android-SDK/en/installation-guide/">
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1611290143"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1611290143"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1621488361"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1621488361"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fout.github.io\/RFP-Android-SDK\/\/en";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1611290143"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1621488361"></script>
 
     
   </div>
@@ -535,7 +535,7 @@ This supports Google Play Services version 8.3 and later. (We have primarily con
 
 <h3 id="add-the-exoplayer-library">Add the ExoPlayer library</h3>
 
-<p>With RFP-Android-SDK, it is necessary to add <a href="https://developer.android.com/guide/topics/media/exoplayer.html">ExoPlayer</a> to play back video advertising. The supported ExoPlayer version is 2.4 and beyond. (We have primarily confirmed operability on version <code>r2.5.1</code>.)</p>
+<p>With RFP-Android-SDK, it is necessary to add <a href="https://developer.android.com/guide/topics/media/exoplayer.html">ExoPlayer</a> to play back video advertising. The supported ExoPlayer version is 2.9 and beyond. (We have primarily confirmed operability on version <code>2.14.0</code>.)</p>
 
 <p>Add the following to <code>build.gradle</code> and execute <code>Sync Projects with Gradle Files</code>.</p>
 
@@ -548,35 +548,35 @@ dependencies {
 
     // for rfp-video-sdk
 
-    // Using exoplayer2.6
-    compile 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer26:x.x.x'
-    compile 'com.google.android.exoplayer:exoplayer-core:2.6.+'
-    compile 'com.google.android.exoplayer:exoplayer-hls:2.6.+'
-
-    // // Using exoplayer2.7
-    // compile 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer27:x.x.x'
-    // compile 'com.google.android.exoplayer:exoplayer-core:2.7.+'
-    // compile 'com.google.android.exoplayer:exoplayer-hls:2.7.+'
-
-    // // Using exoplayer2.8
-    // implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer28:x.x.x'
-    // implementation 'com.google.android.exoplayer:exoplayer-core:2.8.+'
-    // implementation 'com.google.android.exoplayer:exoplayer-hls:2.8.+'
-
     // // Using exoplayer2.9
     // implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer29:x.x.x'
     // implementation 'com.google.android.exoplayer:exoplayer-core:2.9.+'
     // implementation 'com.google.android.exoplayer:exoplayer-hls:2.9.+'
 
-    // // Using exoplayer2.8
+    // // Using exoplayer2.10
     // implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer210:x.x.x'
     // implementation 'com.google.android.exoplayer:exoplayer-core:2.10.+'
     // implementation 'com.google.android.exoplayer:exoplayer-hls:2.10.+'
 
-    // // Using exoplayer2.8
+    // // Using exoplayer2.11
     // implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer211:x.x.x'
     // implementation 'com.google.android.exoplayer:exoplayer-core:2.11.+'
     // implementation 'com.google.android.exoplayer:exoplayer-hls:2.11.+'
+
+    // // Using exoplayer2.12
+    // implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer212:x.x.x'
+    // implementation 'com.google.android.exoplayer:exoplayer-core:2.12.+'
+    // implementation 'com.google.android.exoplayer:exoplayer-hls:2.12.+'
+
+    // // Using exoplayer2.13
+    // implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer213:x.x.x'
+    // implementation 'com.google.android.exoplayer:exoplayer-core:2.13.+'
+    // implementation 'com.google.android.exoplayer:exoplayer-hls:2.13.+'
+
+    // // Using exoplayer2.14
+    // implementation 'jp.fout.rfp.android.sdk:rfp-video-sdk-exoplayer214:x.x.x'
+    // implementation 'com.google.android.exoplayer:exoplayer-core:2.14.+'
+    // implementation 'com.google.android.exoplayer:exoplayer-hls:2.14.+'
 }
 </code></pre>
 
@@ -802,24 +802,24 @@ dependencies {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1611290143"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1611290143"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1611290143"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1611290143"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1611290143"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1611290143"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1621488361"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1611290143"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1611290143"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1621488361"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1611290143" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1611290143"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1621488361" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1621488361"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script src="/RFP-Android-SDK/js/tabs.js?1611290143"></script>
+    <script src="/RFP-Android-SDK/js/tabs.js?1621488361"></script>
 
   </body>
 </html>

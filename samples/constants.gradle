@@ -1,6 +1,6 @@
 project.ext {
-    versionCode = 33
-    versionName = '3.8.2'
+    versionCode = 34
+    versionName = '3.8.3'
 
     minSdkVersion = 16
     compileSdkVersion = 30
@@ -10,7 +10,7 @@ project.ext {
     powermockVersion = '2.0.9'
     robolectricVersion = '4.4'
 
-    demoVersionCode = 42
+    demoVersionCode = 43
     demoVersionName = versionName
     demoMinSdkVersion = 18
     demoTargetSdkVersion = 29
@@ -24,48 +24,6 @@ project.ext {
              'version': '8.3.0']
     ]
 
-    exoplayer26Deps = [
-            ['group'  : 'jp.fout.rfp.android.sdk',
-             'name'   : 'rfp-sdk',
-             'version': versionName,
-            ],
-            ['group'  : 'com.google.android.exoplayer',
-             'name'   : 'exoplayer-core',
-             'version': '2.6.0',
-            ],
-            ['group'  : 'com.google.android.exoplayer',
-             'name'   : 'exoplayer-hls',
-             'version': '2.6.0',
-            ],
-    ]
-    exoplayer27Deps = [
-            ['group'  : 'jp.fout.rfp.android.sdk',
-             'name'   : 'rfp-sdk',
-             'version': versionName,
-            ],
-            ['group'  : 'com.google.android.exoplayer',
-             'name'   : 'exoplayer-core',
-             'version': '2.7.0',
-            ],
-            ['group'  : 'com.google.android.exoplayer',
-             'name'   : 'exoplayer-hls',
-             'version': '2.7.0',
-            ],
-    ]
-    exoplayer28Deps = [
-            ['group'  : 'jp.fout.rfp.android.sdk',
-             'name'   : 'rfp-sdk',
-             'version': versionName,
-            ],
-            ['group'  : 'com.google.android.exoplayer',
-             'name'   : 'exoplayer-core',
-             'version': '2.8.0',
-            ],
-            ['group'  : 'com.google.android.exoplayer',
-             'name'   : 'exoplayer-hls',
-             'version': '2.8.0',
-            ],
-    ]
     exoplayer29Deps = [
             ['group'  : 'jp.fout.rfp.android.sdk',
              'name'   : 'rfp-sdk',
@@ -106,6 +64,48 @@ project.ext {
             ['group'  : 'com.google.android.exoplayer',
              'name'   : 'exoplayer-hls',
              'version': '2.11.0',
+            ],
+    ]
+    exoplayer212Deps = [
+            ['group'  : 'jp.fout.rfp.android.sdk',
+             'name'   : 'rfp-sdk',
+             'version': versionName,
+            ],
+            ['group'  : 'com.google.android.exoplayer',
+             'name'   : 'exoplayer-core',
+             'version': '2.12.3',
+            ],
+            ['group'  : 'com.google.android.exoplayer',
+             'name'   : 'exoplayer-hls',
+             'version': '2.12.3',
+            ],
+    ]
+    exoplayer213Deps = [
+            ['group'  : 'jp.fout.rfp.android.sdk',
+             'name'   : 'rfp-sdk',
+             'version': versionName,
+            ],
+            ['group'  : 'com.google.android.exoplayer',
+             'name'   : 'exoplayer-core',
+             'version': '2.13.3',
+            ],
+            ['group'  : 'com.google.android.exoplayer',
+             'name'   : 'exoplayer-hls',
+             'version': '2.13.3',
+            ],
+    ]
+    exoplayer214Deps = [
+            ['group'  : 'jp.fout.rfp.android.sdk',
+             'name'   : 'rfp-sdk',
+             'version': versionName,
+            ],
+            ['group'  : 'com.google.android.exoplayer',
+             'name'   : 'exoplayer-core',
+             'version': '2.14.0',
+            ],
+            ['group'  : 'com.google.android.exoplayer',
+             'name'   : 'exoplayer-hls',
+             'version': '2.14.0',
             ],
     ]
 }

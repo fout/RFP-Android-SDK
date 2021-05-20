@@ -3,11 +3,11 @@ buildscript {
     ext.kotlin_version = '1.4.21'
 
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.2'
+        classpath 'com.android.tools.build:gradle:4.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
         classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0"
@@ -16,8 +16,11 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
+        jcenter().mavenContent {
+            includeGroup("com.google.android.exoplayer")
+        }
     }
     group = 'jp.fout.rfp.android.sdk'
 
