@@ -1,6 +1,6 @@
 project.ext {
-    versionCode = 34
-    versionName = '3.8.3'
+    versionCode = 35
+    versionName = '3.8.4'
 
     minSdkVersion = 16
     compileSdkVersion = 30
@@ -10,7 +10,7 @@ project.ext {
     powermockVersion = '2.0.9'
     robolectricVersion = '4.4'
 
-    demoVersionCode = 43
+    demoVersionCode = 44
     demoVersionName = versionName
     demoMinSdkVersion = 18
     demoTargetSdkVersion = 29

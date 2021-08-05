@@ -13,19 +13,19 @@
     <title>アウトストリーム動画広告 :: RFP-Android-SDK Docs</title>
 
     
-    <link href="/RFP-Android-SDK/css/nucleus.css?1621488361" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1621488361" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hybrid.css?1621488361" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/featherlight.min.css?1621488361" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1621488361" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/auto-complete.css?1621488361" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/theme.css?1621488361" rel="stylesheet">
-    <link href="/RFP-Android-SDK/css/hugo-theme.css?1621488361" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/nucleus.css?1628128208" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/fontawesome-all.min.css?1628128208" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hybrid.css?1628128208" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/featherlight.min.css?1628128208" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/perfect-scrollbar.min.css?1628128208" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/auto-complete.css?1628128208" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/theme.css?1628128208" rel="stylesheet">
+    <link href="/RFP-Android-SDK/css/hugo-theme.css?1628128208" rel="stylesheet">
     
-      <link href="/RFP-Android-SDK/css/theme-green.css?1621488361" rel="stylesheet">
+      <link href="/RFP-Android-SDK/css/theme-green.css?1628128208" rel="stylesheet">
     
 
-    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/jquery-2.x.min.js?1628128208"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -34,7 +34,7 @@
       
     </style>
       
-  <link href="/RFP-Android-SDK/css/tabs.css?1621488361" rel="stylesheet">
+  <link href="/RFP-Android-SDK/css/tabs.css?1628128208" rel="stylesheet">
 
   </head>
   <body class="" data-url="/RFP-Android-SDK/programming-guide/2_10/">
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1621488361"></script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1621488361"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/lunr.min.js?1628128208"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/auto-complete.js?1628128208"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fout.github.io\/RFP-Android-SDK\/";
     
 </script>
-<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1621488361"></script>
+<script type="text/javascript" src="/RFP-Android-SDK/js/search.js?1628128208"></script>
 
     
   </div>
@@ -509,7 +509,10 @@
 <li><a href="#依存ライブラリの追加">依存ライブラリの追加</a></li>
 <li><a href="#動画再生用ビューの配置">動画再生用ビューの配置</a></li>
 <li><a href="#初期化処理">初期化処理</a></li>
-<li><a href="#広告の取得">広告の取得</a></li>
+<li><a href="#広告の取得">広告の取得</a>
+<ul>
+<li><a href="#カスタムパラメータの送信">カスタムパラメータの送信</a></li>
+</ul></li>
 <li><a href="#動画広告の表示">動画広告の表示</a></li>
 </ul></li>
 </ul></li>
@@ -589,6 +592,26 @@
             Log.d(TAG, &quot;Fail to load outstream video ad: $message&quot;)
             //
         }
+        .build()
+loader.loadAd(context)
+</code></pre>
+
+<h4 id="カスタムパラメータの送信">カスタムパラメータの送信</h4>
+
+<p>SDK v3.8.4からカスタムパラメータの送信に対応しました。</p>
+
+<p>(カスタムパラメータの詳細は担当者にお問い合わせください)</p>
+
+<p><code>RFPOutstreamVideoAdLoader.Builder#data()</code> でパラメータを指定することができます。</p>
+
+<pre><code class="language-kotlin">val loader = RFPOutstreamVideoAdLoader.Builder(spotId)
+        .count(count)
+        .positions(positions)
+        // 個別に設定
+        .data(&quot;key1&quot;, &quot;xyzzy&quot;)
+        .data(&quot;key2&quot;, arrayOf(&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;))
+        // または Bundle で一括
+        // .data(bundleOf(&quot;key1&quot; to &quot;xyzzy&quot;, &quot;key2&quot; to arrayOf(&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;)))
         .build()
 loader.loadAd(context)
 </code></pre>
@@ -911,24 +934,24 @@ loader.loadAd(context)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/RFP-Android-SDK/js/clipboard.min.js?1621488361"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1621488361"></script>
-    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1621488361"></script>
-    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1621488361"></script>
-    <script src="/RFP-Android-SDK/js/featherlight.min.js?1621488361"></script>
-    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1621488361"></script>
-    <script src="/RFP-Android-SDK/js/highlight.pack.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/clipboard.min.js?1628128208"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.min.js?1628128208"></script>
+    <script src="/RFP-Android-SDK/js/perfect-scrollbar.jquery.min.js?1628128208"></script>
+    <script src="/RFP-Android-SDK/js/jquery.sticky.js?1628128208"></script>
+    <script src="/RFP-Android-SDK/js/featherlight.min.js?1628128208"></script>
+    <script src="/RFP-Android-SDK/js/html5shiv-printshiv.min.js?1628128208"></script>
+    <script src="/RFP-Android-SDK/js/highlight.pack.js?1628128208"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1621488361"></script>
-    <script src="/RFP-Android-SDK/js/learn.js?1621488361"></script>
-    <script src="/RFP-Android-SDK/js/hugo-learn.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/modernizr.custom.71422.js?1628128208"></script>
+    <script src="/RFP-Android-SDK/js/learn.js?1628128208"></script>
+    <script src="/RFP-Android-SDK/js/hugo-learn.js?1628128208"></script>
 
-    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1621488361" type="text/css" rel="stylesheet" />
-    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1621488361"></script>
+    <link href="/RFP-Android-SDK/mermaid/mermaid.css?1628128208" type="text/css" rel="stylesheet" />
+    <script src="/RFP-Android-SDK/mermaid/mermaid.js?1628128208"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script src="/RFP-Android-SDK/js/tabs.js?1621488361"></script>
+    <script src="/RFP-Android-SDK/js/tabs.js?1628128208"></script>
 
   </body>
 </html>
