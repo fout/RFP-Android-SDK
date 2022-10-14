@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>jp.fout.rfp.android.sdk</groupId>
+  <artifactId>rfp-video-sdk-exoplayer218</artifactId>
+  <versioning>
+    <latest>3.9.0</latest>
+    <release>3.9.0</release>
+    <versions>
+      <version>3.9.0</version>
+    </versions>
+    <lastUpdated>20221014043954</lastUpdated>
+  </versioning>
+</metadata>

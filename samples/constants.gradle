@@ -1,20 +1,19 @@
 project.ext {
-    versionCode = 35
-    versionName = '3.8.4'
+    versionName = '3.9.0'
 
     minSdkVersion = 16
-    compileSdkVersion = 30
-    targetSdkVersion = 30
+    compileSdkVersion = 31
+    targetSdkVersion = 31
     junitVersion = '4.13.1'
     mockitoVersion = '3.6.0'
     powermockVersion = '2.0.9'
     robolectricVersion = '4.4'
 
-    demoVersionCode = 44
+    demoVersionCode = 45
     demoVersionName = versionName
     demoMinSdkVersion = 18
-    demoTargetSdkVersion = 29
-    demoCompileSdkVersion = 29
+    demoTargetSdkVersion = 31
+    demoCompileSdkVersion = 31
 
     workMavenRepos = '/tmp/maven_work/repos'
 
@@ -106,6 +105,20 @@ project.ext {
             ['group'  : 'com.google.android.exoplayer',
              'name'   : 'exoplayer-hls',
              'version': '2.14.0',
+            ],
+    ]
+    exoplayer218Deps = [
+            ['group'  : 'jp.fout.rfp.android.sdk',
+             'name'   : 'rfp-sdk',
+             'version': versionName,
+            ],
+            ['group'  : 'com.google.android.exoplayer',
+             'name'   : 'exoplayer-core',
+             'version': '2.18.1',
+            ],
+            ['group'  : 'com.google.android.exoplayer',
+             'name'   : 'exoplayer-hls',
+             'version': '2.18.1',
             ],
     ]
 }

@@ -14,9 +14,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.google.gms:google-services:4.3.4'
-        classpath 'com.google.firebase:firebase-appdistribution-gradle:2.0.1'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.4.1'
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-appdistribution-gradle:2.2.0'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
     }
 }
 
@@ -60,7 +60,7 @@ android {
 
     flavorDimensions "javaVersion", "exoplayer"
     def exoplayerDimensions = [
-            'exoplayer214', 'exoplayer213', 'exoplayer212', 'exoplayer211', 'exoplayer210', 'exoplayer29'
+            'exoplayer218', 'exoplayer214', 'exoplayer213', 'exoplayer212', 'exoplayer211', 'exoplayer210', 'exoplayer29'
     ]
     productFlavors {
         java7 {
@@ -108,18 +108,18 @@ dependencies {
     implementation 'androidx.test.espresso:espresso-idling-resource:3.3.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation platform('com.google.firebase:firebase-bom:26.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'com.google.dagger:dagger:2.27'
-    implementation 'com.google.dagger:dagger-android-support:2.27'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.27'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.27'
-    kapt 'com.google.dagger:dagger-compiler:2.27'
-    kapt 'com.google.dagger:dagger-android-processor:2.27'
+    implementation 'com.google.dagger:dagger:2.38.1'
+    implementation 'com.google.dagger:dagger-android-support:2.38.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.38.1'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.38.1'
+    kapt 'com.google.dagger:dagger-compiler:2.38.1'
+    kapt 'com.google.dagger:dagger-android-processor:2.38.1'
     //noinspection GradleDependency
     implementation 'javax.xml.bind:jaxb-api:2.3.0'
     implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
@@ -133,13 +133,13 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'com.jakewharton.timber:timber:4.7.1'
     testImplementation "junit:junit:${project.ext.junitVersion}"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test:rules:1.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
 //    androidTestImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.2'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.6'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 
     testImplementation "org.mockito:mockito-core:${project.ext.mockitoVersion}"
     androidTestImplementation "org.mockito:mockito-android:${project.ext.mockitoVersion}"
