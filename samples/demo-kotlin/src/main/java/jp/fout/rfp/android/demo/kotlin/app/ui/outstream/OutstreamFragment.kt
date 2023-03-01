@@ -35,6 +35,7 @@ class OutstreamFragment : Fragment(), Injectable {
 
     private lateinit var inViewNotifier: RFPInViewNotifier
     private lateinit var adVideoView: VideoAdView
+    private lateinit var adVideoView2: VideoAdView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -42,21 +43,31 @@ class OutstreamFragment : Fragment(), Injectable {
 
         inViewNotifier = RFPInViewNotifier(requireActivity(), object : OnVisibilityChangedListener {
             override fun onVisible(v: View?) {
-                Timber.d("onVisible")
+                Timber.d("onVisible: ${inViewNotifier.hashCode()}")
                 (v as? VideoAdView)?.play()
             }
 
             override fun onInvisible(v: View?) {
-                Timber.d("onInvisible")
+                Timber.d("onInvisible: ${inViewNotifier.hashCode()}")
                 (v as? VideoAdView)?.pause()
             }
         })
+
         adVideoView = view.findViewById(R.id.ad_video)
         adVideoView.setAutoStart(false)
         adVideoView.setOnErrorListener { _, message, t ->
             Timber.d(t, "Video Ad View Error: $message")
         }
         inViewNotifier.addView(adVideoView)
+        Timber.d("adVideoView.hashCode=${adVideoView.hashCode()}")
+
+        adVideoView2 = view.findViewById(R.id.ad_video_2)
+        adVideoView2.setAutoStart(false)
+        adVideoView2.setOnErrorListener { _, message, t ->
+            Timber.d(t, "Video Ad View 2 Error: $message")
+        }
+        inViewNotifier.addView(adVideoView2)
+        Timber.d("adVideoView2.hashCode=${adVideoView2.hashCode()}")
 
         return view
     }

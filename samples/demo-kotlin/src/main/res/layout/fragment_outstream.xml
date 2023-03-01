@@ -134,6 +134,17 @@
 
         </jp.fout.rfp.android.sdk.video.VideoAdView>
 
+        <jp.fout.rfp.android.sdk.video.VideoAdView
+            android:id="@+id/ad_video_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ad_video">
+
+        </jp.fout.rfp.android.sdk.video.VideoAdView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
